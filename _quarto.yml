@@ -1,0 +1,129 @@
+project:
+  type: book
+book:
+  title: HSMA - Modern Analytics
+  author: Sammi Rosser
+  date: 2024/09/30
+  chapters:
+    - index.qmd
+    - part: Skills So Far
+      chapters:
+      - programming_in_python.qmd
+      - des.qmd
+      - geographic_visualization_modelling.qmd
+      - machine_learning.qmd
+      - natural_language_processing.qmd
+      - system_dynamics_agent_based_simulation.qmd
+      - git_and_github.qmd
+      - web_development.qmd
+    - part: An Introduction to Reproducible Document Creation with Quarto
+      chapters:
+      - what_is_quarto.qmd
+      - quarto_install_setup.qmd
+      - your_first_quarto_document.qmd
+      - intro_to_yaml_document_headers.qmd
+      - quarto_document_elements.qmd
+      - code_chunks.qmd
+      - layout_customisation.qmd
+      - parameters.qmd
+      - automating_quarto_document_generation.qmd
+    - part: Advanced Reproducible Documents with Quarto
+      chapters:
+      - dashboard_layout.qmd
+      - slides.qmd
+      - scrollytelling.qmd
+      - books.qmd
+    - part: Automating Data Gathering
+      chapters:
+      - connecting_to_databases.qmd
+      - using_apis.qmd
+      - web_scraping.qmd
+    - part: Further Automation
+      chapters:
+      - automating_spreadsheets_xlsx_writer.qmd
+      - automating_powerpoint_slides_python_pptx.qmd
+      - introduction_to_testing.qmd
+      - task_scheduler.qmd
+      - introduction_to_pipelines.qmd
+    - part: Forecasting
+      chapters:
+      - introduction_to_forecasting.qmd
+      - time_series_concepts.qmd
+      - working_with_time_series_data_pandas.qmd
+      - naive_forecasts.qmd
+      - arima.qmd
+      - prophet.qmd
+    - part: Other Time Series Methods
+      chapters:
+      - statistical_process_control.qmd
+      - changepoint_analysis.qmd
+    - part: Alternative Forecasting Techniques
+      chapters:
+      - monte_carlo.qmd
+      - machine_learning_for_forecasting.qmd
+    - part: Process Mining
+      chapters:
+      - introduction_to_process_mining.qmd
+    - part: Statistics
+      chapters:
+      - introduction_to_statistics.qmd
+      - statistical_terminology.qmd
+      - t_tests.qmd
+      - anova_tests.qmd
+      - chi_squared_tests.qmd
+      - time_to_event_data.qmd
+      - further_reading_statistics.qmd
+    - part: R
+      chapters:
+      - why_r.qmd
+      - introduction_to_the_tidyverse.qmd
+      - r_packages_without_python_equivalents.qmd
+      - using_r_and_python_together.qmd
+      - r_inspired_python_packages.qmd
+    - part: Network Analysis
+      chapters:
+      - introduction_to_network_analysis.qmd
+    - part: Good Coding Habits
+      chapters:
+      - documentation.qmd
+      - linting.qmd
+      - moduliarization.qmd
+      - code_review.qmd
+      - tests.qmd
+      - creating_and_publishing_your_own_packages.qmd
+    - part: Communicating Data
+      chapters:
+      - introduction_to_data_communication.qmd
+  cover-image: resources/cover_image_robot.jpeg
+  favicon: resources/logos/hsma_logo_transparent_background_large.png
+  search: true
+  page-navigation: true
+  back-to-top-navigation: true
+  navbar:
+    search: false
+    background: '#8A1E1E'
+    right:
+    - icon: github
+      href: https://github.com/hsma-programme/
+      aria-label: GitHub
+  sidebar:
+    search: true
+    style: docked
+    logo: resources/logos/hsma_logo_transparent_background_large.png
+    background: '#111111'
+bibliography: references.bib
+format:
+  html:
+    css: include/webex.css
+    include-after-body: include/webex.js
+    theme:
+      dark:
+      - darkly
+      - theme-dark.scss
+      - resources/fonts/css/lexend.css
+      light:
+      - flatly
+      - theme-light.scss
+      - resources/fonts/css/lexend.css
+    grid:
+      sidebar-width: 250px

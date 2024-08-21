@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "HSMA - Modern Analytics",
+    "section": "",
+    "text": "Preface\nWelcome to the HSMA book of modern analytics.\nIn many ways, everything taught on the HSMA course is modern analytics! From module 2 on discrete event simulation to module 7 on collaborative development with github and web app development, the role of the analyst is becoming ever broader.\nSo why a module on modern analytics?\nThis module allows us to include a range of techniques that can contribute to your toolkit as an analyst.\nWe’ll also talk a little bit about what analytics and data science is and how to ensure its potential is maximised in organisations.\nWe’ll be covering a range of techniques. - Creating documents with Quarto to allow you to automate analysis - Writing tests to ensure your code is working as expected - Working with data from production sources, such as SQL databases - Automating the production of spreadsheets and slide packs - Forecasting future trends with - time series analysis (including naive forecasts, ARIMA, and Prophet) - machine learning - simulation - Process mining with the pm4py library\nWe’ll also provide a high-level overview on a range of other things it’s useful for the modern analyst to know about. We don’t have time to teach them all in the depth we’d like, but we can certainly point you in the direction of some resources to help you with all of the following: - Statistics - tests, such as - t-tests - chi-squared - ANOVA - concepts, such as - p-values - confidence intervals - how to use statistics appropriately, such as - analysis plans - correcting for multiple comparisons - Bayesian vs Frequentist statistics - Working with time-to-event data - Grabbing data from APIs, or from the wider web using web scraping - The R programming language and why you might want to learn it - Association Rule Learning - Network analysis - Working with ‘big’ data - Working with R and Python in other tools (e.g. PowerBI) - Causal Analysis",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "automating_spreadsheets_xlsx_writer.html",
+    "href": "automating_spreadsheets_xlsx_writer.html",
+    "title": "25  Automating Spreadsheet Creation with the XlsxWriter Package",
+    "section": "",
+    "text": "As much as we want our end users to",
+    "crumbs": [
+      "Further Automation",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Automating Spreadsheet Creation with the XlsxWriter Package</span>"
+    ]
+  }
+]
