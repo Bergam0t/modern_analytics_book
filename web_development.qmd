@@ -1,0 +1,9 @@
+# (WIP) Creating Web Apps and Dashboards in Python
+
+While these sessions haven't been delivered yet, the accompanying course book is in the process of being written.
+
+[Click here to open the HSMA web development book in a new tab](https://bergam0t.github.io/streamlit_book/){target="_blank"}, or take a look at it below.
+
+```{=html}
+<iframe width="1200" height="800" src="https://bergam0t.github.io/streamlit_book/" title="HSMA - Streamlit Book"></iframe>
+```

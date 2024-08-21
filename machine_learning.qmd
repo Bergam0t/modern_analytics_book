@@ -1,0 +1,12 @@
+# Machine Learning
+
+Machine learning encompasses techniques such as logistic regression, decision trees, random forests, boosted trees and neural networks.
+We cover how to use all of these techniques to develop predictive models.
+
+While we don't have a full book on this topic, what we do have is a page that collates all of the lectures and repository links into a single place, as well as collating all of the example notebooks.
+
+[Click here to open the HSMA Machine Learning Collection in a new tab](https://hsma-programme.github.io/h6_module4_notebooks/){target="_blank"}, or take a look at it below.
+
+```{=html}
+<iframe width="1200" height="800" src="https://hsma-programme.github.io/h6_module4_notebooks/" title="HSMA - Machine Learning Collection"></iframe>
+```

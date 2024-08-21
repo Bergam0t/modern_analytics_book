@@ -1,0 +1,9 @@
+# Discrete Event Simulation
+
+Discrete Event Simulation (DES) allows you to model queueing problems. This can be useful for creating a simulated version of a healthcare system, allowing you to explore the impact of changing things like the number of resources available or the length of time a procedure takes.
+
+[Click here to open the little book of DES in a new tab](https://hsma-programme.github.io/hsma6_des_book/){target="_blank"}, or take a look at it below.
+
+```{=html}
+<iframe width="1200" height="800" src="https://hsma-programme.github.io/hsma6_des_book/" title="HSMA - the little book of DES"></iframe>
+```

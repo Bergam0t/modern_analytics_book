@@ -1,0 +1,13 @@
+# Geographic Visualisation and Optimization Problems
+
+Geographic visualisation is a powerful and often underestimated tool.
+
+We cover how to produce maps in both QGIS (a free and open source equivalent to tools like ArcGIS) - which is more user-friendly and doesn't require any knowledge of Python - as well as how to produce both static and interactive maps in Python.
+
+We also cover how to tackle location optimization problems in Python - ensuring any new services are placed in the optimal location to minimize an objective such as the overall travel time for an area - and interact with travel time APIs to pull back travel time data at scale.
+
+[Click here to open the HSMA Geographic Modelling and Visualisation book in a new tab](https://hsma-programme.github.io/hsma6_geographic_optimisation_and_visualisation_book/){target="_blank"}, or take a look at it below.
+
+```{=html}
+<iframe width="1200" height="800" src="https://hsma-programme.github.io/hsma6_geographic_optimisation_and_visualisation_book/" title="HSMA - Geographic Modelling and Visualisation"></iframe>
+```

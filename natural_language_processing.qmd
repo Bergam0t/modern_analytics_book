@@ -1,0 +1,37 @@
+# Natural Language Processing
+
+At the moment we don't have a book for this, but the relevant materials are available below.
+
+## 5A - Introduction to Natural Language Processing (NLP)
+
+<a href="https://docs.google.com/presentation/d/15NWc3d84XusMmTHQdpIgfvD6LdUGfZwk7cLyLFt8158/edit?usp=sharing"><img src="https://img.shields.io/static/v1?label=Google+Slides&message=Click+here+to+view+the+slides+for+this+session&color=%23FBBC04&style=for-the-badge&logo=googleslides&logoColor=%23FBBC04" alt="Google Slides - Click here to view slides for this session"></a>
+
+In this session we'll begin Module 5 and our journey into Natural Language Processing.
+
+We'll look at some core concepts important for processing text data, and learn a few little neat things we can do with our data along the way, including wordclouds and a method for assessing the similarity of different bits of text.
+
+{{< video https://www.youtube.com/watch?v=XrdEnUiFBUQ >}}
+
+[Repository Link](https://github.com/hsma-programme/h6_5a_intro_to_nlp)
+
+## 5B - Named Entity Recognition
+
+<a href="https://docs.google.com/presentation/d/1--RLU2oi4huj0CqPASNCnHKSl9qaA8grcin42oWyxoc/edit?usp=sharing"><img src="https://img.shields.io/static/v1?label=Google+Slides&message=Click+here+to+view+the+slides+for+this+session&color=%23FBBC04&style=for-the-badge&logo=googleslides&logoColor=%23FBBC04" alt="Google Slides - Click here to view slides for this session"></a>
+
+In this session we'll continue our journey into Natural Language Processing.
+
+Have you got named entities?  Do you need them recognised?  Then have we got the session for you!  Our session on Named Entity Recognition will talk all about named entities, and recognition of them.  Along the way we'll stop by Sesame Street and Fraggle Rock, talk about Transformers, Parsing, Grammar, POS Tagging and more.
+
+{{< video https://www.youtube.com/watch?v=mOnG9H3oOdo >}}
+
+[Repository Link](https://github.com/hsma-programme/h6_5b_named_entity_recognition)
+
+## 5C - Sentiment Analysis
+
+<a href="https://docs.google.com/presentation/d/1k2gQkA6Qa0TKm47Hh6tM7heTpYh6w2wF27ImQC_BeXk/edit?usp=sharing"><img src="https://img.shields.io/static/v1?label=Google+Slides&message=Click+here+to+view+the+slides+for+this+session&color=%23FBBC04&style=for-the-badge&logo=googleslides&logoColor=%23FBBC04" alt="Google Slides - Click here to view slides for this session"></a>
+
+In this session we don our pirate outfits and sail to the Caribbean as we look for the secret of Sentiment Analysis and Text Classification.  We'll fight dastardly pirates as well as a pirate that's already dead but just won't accept it.
+
+{{< video https://www.youtube.com/watch?v=mOnG9H3oOdo >}}
+
+[Repository Link](https://github.com/hsma-programme/h6_5c_sentiment_analysis)

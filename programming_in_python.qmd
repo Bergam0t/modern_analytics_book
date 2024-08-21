@@ -1,0 +1,36 @@
+# Programming in Python
+
+As a prerequisite to almost all of the other material we teach, you will need to have a good grasp of the basics of Python programming.
+
+
+:::{.callout-tip}
+You don't need to be a Python master before progressing through the rest of the material!
+
+We do also use two non-Python tools
+
+- QGIS in the geographic visualisation section (though more advanced visuals and optimisation problems are carried out in Python)
+- system dynamics (which uses the online tool 'Insight Maker')
+
+To move onto later modules, it's recommended that you have some familiarity with
+
+- variables
+- key Python data types, including lists and dictionaries
+- importing packages
+- using functions
+- writing functions
+- conditional logic (if, elif, else)
+- loops (while loops, for loops)
+- reading text and data files
+- simple data manipulation with the `pandas` library
+- simple data visualisation with the `matplotlib` or `plotly.express` libraries
+
+For discrete event simulation and agent-based simulation, it is recommended that you have an understanding of object-oriented programming in Python.
+
+All of these topics are covered in the book - take a look and consider refreshing your memory before moving on.
+:::
+
+[Click here to open the HSMA Intro to Python book in a new tab](https://hsma-programme.github.io/hsma6_intro_to_python_book/){target="_blank"}, or take a look at it below.
+
+```{=html}
+<iframe width="1200" height="800" src="https://hsma-programme.github.io/hsma6_intro_to_python_book/" title="HSMA - Programming in Python"></iframe>
+```
