@@ -10,83 +10,6 @@
     ]
   },
   {
-    "objectID": "automating_spreadsheets_xlsx_writer.html",
-    "href": "automating_spreadsheets_xlsx_writer.html",
-    "title": "25  Automating Spreadsheet Creation with the XlsxWriter Package",
-    "section": "",
-    "text": "As much as we want our end users to",
-    "crumbs": [
-      "Further Automation",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Automating Spreadsheet Creation with the XlsxWriter Package</span>"
-    ]
-  },
-  {
-    "objectID": "programming_in_python.html",
-    "href": "programming_in_python.html",
-    "title": "1  Programming in Python",
-    "section": "",
-    "text": "As a prerequisite to almost all of the other material we teach, you will need to have a good grasp of the basics of Python programming.\n\n\n\n\n\n\nTip\n\n\n\nYou don’t need to be a Python master before progressing through the rest of the material!\nWe do also use two non-Python tools\n\nQGIS in the geographic visualisation section (though more advanced visuals and optimisation problems are carried out in Python)\nsystem dynamics (which uses the online tool ‘Insight Maker’)\n\nTo move onto later modules, it’s recommended that you have some familiarity with\n\nvariables\nkey Python data types, including lists and dictionaries\nimporting packages\nusing functions\nwriting functions\nconditional logic (if, elif, else)\nloops (while loops, for loops)\nreading text and data files\nsimple data manipulation with the pandas library\nsimple data visualisation with the matplotlib or plotly.express libraries\n\nFor discrete event simulation and agent-based simulation, it is recommended that you have an understanding of object-oriented programming in Python.\nAll of these topics are covered in the book - take a look and consider refreshing your memory before moving on.\n\n\nClick here to open the HSMA Intro to Python book in a new tab, or take a look at it below.",
-    "crumbs": [
-      "Skills So Far",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Programming in Python</span>"
-    ]
-  },
-  {
-    "objectID": "des.html",
-    "href": "des.html",
-    "title": "2  Discrete Event Simulation",
-    "section": "",
-    "text": "Discrete Event Simulation (DES) allows you to model queueing problems. This can be useful for creating a simulated version of a healthcare system, allowing you to explore the impact of changing things like the number of resources available or the length of time a procedure takes.\nClick here to open the little book of DES in a new tab, or take a look at it below.",
-    "crumbs": [
-      "Skills So Far",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Discrete Event Simulation</span>"
-    ]
-  },
-  {
-    "objectID": "geographic_visualization_modelling.html",
-    "href": "geographic_visualization_modelling.html",
-    "title": "3  Geographic Visualisation and Optimization Problems",
-    "section": "",
-    "text": "Geographic visualisation is a powerful and often underestimated tool.\nWe cover how to produce maps in both QGIS (a free and open source equivalent to tools like ArcGIS) - which is more user-friendly and doesn’t require any knowledge of Python - as well as how to produce both static and interactive maps in Python.\nWe also cover how to tackle location optimization problems in Python - ensuring any new services are placed in the optimal location to minimize an objective such as the overall travel time for an area - and interact with travel time APIs to pull back travel time data at scale.\nClick here to open the HSMA Geographic Modelling and Visualisation book in a new tab, or take a look at it below.",
-    "crumbs": [
-      "Skills So Far",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Geographic Visualisation and Optimization Problems</span>"
-    ]
-  },
-  {
-    "objectID": "machine_learning.html",
-    "href": "machine_learning.html",
-    "title": "4  Machine Learning",
-    "section": "",
-    "text": "Machine learning encompasses techniques such as logistic regression, decision trees, random forests, boosted trees and neural networks. We cover how to use all of these techniques to develop predictive models.\nWhile we don’t have a full book on this topic, what we do have is a page that collates all of the lectures and repository links into a single place, as well as collating all of the example notebooks.\nClick here to open the HSMA Machine Learning Collection in a new tab, or take a look at it below.",
-    "crumbs": [
-      "Skills So Far",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Machine Learning</span>"
-    ]
-  },
-  {
-    "objectID": "git_and_github.html",
-    "href": "git_and_github.html",
-    "title": "7  (Coming Soon!) Git and Github",
-    "section": "",
-    "text": "These sessions are being revamped - they will be delivered in September 2024.",
-    "crumbs": [
-      "Skills So Far",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>(Coming Soon!) Git and Github</span>"
-    ]
-  },
-  {
-    "objectID": "web_development.html",
-    "href": "web_development.html",
-    "title": "9  (WIP) Creating Web Apps and Dashboards in Python",
-    "section": "",
-    "text": "While these sessions haven’t been delivered yet, the accompanying course book is in the process of being written.\nClick here to open the HSMA web development book in a new tab, or take a look at it below.",
-    "crumbs": [
-      "Skills So Far",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>(WIP) Creating Web Apps and Dashboards in Python</span>"
-    ]
-  },
-  {
     "objectID": "about_this_section.html",
     "href": "about_this_section.html",
     "title": "1  About This Section",
@@ -95,6 +18,50 @@
     "crumbs": [
       "Skills So Far",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>About This Section</span>"
+    ]
+  },
+  {
+    "objectID": "programming_in_python.html",
+    "href": "programming_in_python.html",
+    "title": "2  Programming in Python",
+    "section": "",
+    "text": "As a prerequisite to almost all of the other material we teach, you will need to have a good grasp of the basics of Python programming.\n\n\n\n\n\n\nTip\n\n\n\nYou don’t need to be a Python master before progressing through the rest of the material!\nWe do also use two non-Python tools\n\nQGIS in the geographic visualisation section (though more advanced visuals and optimisation problems are carried out in Python)\nsystem dynamics (which uses the online tool ‘Insight Maker’)\n\nTo move onto later modules, it’s recommended that you have some familiarity with\n\nvariables\nkey Python data types, including lists and dictionaries\nimporting packages\nusing functions\nwriting functions\nconditional logic (if, elif, else)\nloops (while loops, for loops)\nreading text and data files\nsimple data manipulation with the pandas library\nsimple data visualisation with the matplotlib or plotly.express libraries\n\nFor discrete event simulation and agent-based simulation, it is recommended that you have an understanding of object-oriented programming in Python.\nAll of these topics are covered in the book - take a look and consider refreshing your memory before moving on.\n\n\nClick here to open the HSMA Intro to Python book in a new tab, or take a look at it below.",
+    "crumbs": [
+      "Skills So Far",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Programming in Python</span>"
+    ]
+  },
+  {
+    "objectID": "des.html",
+    "href": "des.html",
+    "title": "3  Discrete Event Simulation",
+    "section": "",
+    "text": "Discrete Event Simulation (DES) allows you to model queueing problems. This can be useful for creating a simulated version of a healthcare system, allowing you to explore the impact of changing things like the number of resources available or the length of time a procedure takes.\nClick here to open the little book of DES in a new tab, or take a look at it below.",
+    "crumbs": [
+      "Skills So Far",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Discrete Event Simulation</span>"
+    ]
+  },
+  {
+    "objectID": "geographic_visualization_modelling.html",
+    "href": "geographic_visualization_modelling.html",
+    "title": "4  Geographic Visualisation and Optimization Problems",
+    "section": "",
+    "text": "Geographic visualisation is a powerful and often underestimated tool.\nWe cover how to produce maps in both QGIS (a free and open source equivalent to tools like ArcGIS) - which is more user-friendly and doesn’t require any knowledge of Python - as well as how to produce both static and interactive maps in Python.\nWe also cover how to tackle location optimization problems in Python - ensuring any new services are placed in the optimal location to minimize an objective such as the overall travel time for an area - and interact with travel time APIs to pull back travel time data at scale.\nClick here to open the HSMA Geographic Modelling and Visualisation book in a new tab, or take a look at it below.",
+    "crumbs": [
+      "Skills So Far",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Geographic Visualisation and Optimization Problems</span>"
+    ]
+  },
+  {
+    "objectID": "machine_learning.html",
+    "href": "machine_learning.html",
+    "title": "5  Machine Learning",
+    "section": "",
+    "text": "Machine learning encompasses techniques such as logistic regression, decision trees, random forests, boosted trees and neural networks. We cover how to use all of these techniques to develop predictive models.\nWhile we don’t have a full book on this topic, what we do have is a page that collates all of the lectures and repository links into a single place, as well as collating all of the example notebooks.\nClick here to open the HSMA Machine Learning Collection in a new tab, or take a look at it below.",
+    "crumbs": [
+      "Skills So Far",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Machine Learning</span>"
     ]
   },
   {
@@ -139,6 +106,39 @@
     "crumbs": [
       "Skills So Far",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>(Coming Soon!) System Dynamics and Agent Based Simulation</span>"
+    ]
+  },
+  {
+    "objectID": "git_and_github.html",
+    "href": "git_and_github.html",
+    "title": "8  (Coming Soon!) Git and Github",
+    "section": "",
+    "text": "These sessions are being revamped - they will be delivered in September 2024.",
+    "crumbs": [
+      "Skills So Far",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>(Coming Soon!) Git and Github</span>"
+    ]
+  },
+  {
+    "objectID": "web_development.html",
+    "href": "web_development.html",
+    "title": "9  (WIP) Creating Web Apps and Dashboards in Python",
+    "section": "",
+    "text": "While these sessions haven’t been delivered yet, the accompanying course book is in the process of being written.\nClick here to open the HSMA web development book in a new tab, or take a look at it below.",
+    "crumbs": [
+      "Skills So Far",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>(WIP) Creating Web Apps and Dashboards in Python</span>"
+    ]
+  },
+  {
+    "objectID": "automating_spreadsheets_xlsx_writer.html",
+    "href": "automating_spreadsheets_xlsx_writer.html",
+    "title": "26  Automating Spreadsheet Creation with the XlsxWriter Package",
+    "section": "",
+    "text": "As much as we want our end users to",
+    "crumbs": [
+      "Further Automation",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Automating Spreadsheet Creation with the XlsxWriter Package</span>"
     ]
   }
 ]
