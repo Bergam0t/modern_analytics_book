@@ -8,6 +8,7 @@ book:
     - index.qmd
     - part: Skills So Far
       chapters:
+      - about_this_section.qmd
       - programming_in_python.qmd
       - des.qmd
       - geographic_visualization_modelling.qmd
@@ -53,6 +54,9 @@ book:
       - naive_forecasts.qmd
       - arima.qmd
       - prophet.qmd
+      - other_time_series_models.qmd
+      - ensembles_time_series.qmd
+      - further_reading_forecasting.qmd
     - part: Other Time Series Methods
       chapters:
       - statistical_process_control.qmd
@@ -94,7 +98,7 @@ book:
     - part: Communicating Data
       chapters:
       - introduction_to_data_communication.qmd
-  cover-image: resources/cover_image_robot.jpeg
+  cover-image: resources/cover_image.jpeg
   favicon: resources/logos/hsma_logo_transparent_background_large.png
   search: true
   page-navigation: true

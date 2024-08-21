@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "HSMA - Modern Analytics",
     "section": "",
-    "text": "Preface\nWelcome to the HSMA book of modern analytics.\nIn many ways, everything taught on the HSMA course is modern analytics! From module 2 on discrete event simulation to module 7 on collaborative development with github and web app development, the role of the analyst is becoming ever broader.\nSo why a module on modern analytics?\nThis module allows us to include a range of techniques that can contribute to your toolkit as an analyst.\nWe’ll also talk a little bit about what analytics and data science is and how to ensure its potential is maximised in organisations.\nWe’ll be covering a range of techniques. - Creating documents with Quarto to allow you to automate analysis - Writing tests to ensure your code is working as expected - Working with data from production sources, such as SQL databases - Automating the production of spreadsheets and slide packs - Forecasting future trends with - time series analysis (including naive forecasts, ARIMA, and Prophet) - machine learning - simulation - Process mining with the pm4py library\nWe’ll also provide a high-level overview on a range of other things it’s useful for the modern analyst to know about. We don’t have time to teach them all in the depth we’d like, but we can certainly point you in the direction of some resources to help you with all of the following: - Statistics - tests, such as - t-tests - chi-squared - ANOVA - concepts, such as - p-values - confidence intervals - how to use statistics appropriately, such as - analysis plans - correcting for multiple comparisons - Bayesian vs Frequentist statistics - Working with time-to-event data - Grabbing data from APIs, or from the wider web using web scraping - The R programming language and why you might want to learn it - Association Rule Learning - Network analysis - Working with ‘big’ data - Working with R and Python in other tools (e.g. PowerBI) - Causal Analysis",
+    "text": "Preface\nWelcome to the HSMA book of modern analytics.\nIn many ways, everything taught on the HSMA course is modern analytics! From module 2 on discrete event simulation to module 7 on collaborative development with github and web app development, the role of the analyst is becoming ever broader.\nSo why a module on modern analytics?\nThis module allows us to include a range of techniques that can contribute to your toolkit as an analyst.\nWe’ll also talk a little bit about what analytics and data science is and how to ensure its potential is maximised in organisations.\nWe’ll be covering a range of techniques.\n\nCreating documents with Quarto to allow you to automate analysis\nWriting tests to ensure your code is working as expected\nWorking with data from production sources, such as SQL databases\nAutomating the production of spreadsheets and slide packs\nForecasting future trends with\n\ntime series analysis (including naive forecasts, ARIMA, and Prophet)\nmachine learning\nsimulation\n\nProcess mining with the pm4py library\n\nWe’ll also provide a high-level overview on a range of other things it’s useful for the modern analyst to know about. We don’t have time to teach them all in the depth we’d like, but we can certainly point you in the direction of some resources to help you with all of the following:\n\nStatistics\n\ntests, such as\n\nt-tests\nchi-squared\nANOVA\n\nconcepts, such as\n\np-values\nconfidence intervals\n\nhow to use statistics appropriately, such as\n\nanalysis plans\ncorrecting for multiple comparisons\n\nBayesian vs Frequentist statistics\n\nWorking with time-to-event data\nGrabbing data from APIs, or from the wider web using web scraping\nThe R programming language and why you might want to learn it\nAssociation Rule Learning\nNetwork analysis\nWorking with ‘big’ data\nWorking with R and Python in other tools (e.g. PowerBI)\nCausal Analysis",
     "crumbs": [
       "Preface"
     ]
@@ -78,12 +78,67 @@
   {
     "objectID": "web_development.html",
     "href": "web_development.html",
-    "title": "8  (WIP) Creating Web Apps and Dashboards in Python",
+    "title": "9  (WIP) Creating Web Apps and Dashboards in Python",
     "section": "",
     "text": "While these sessions haven’t been delivered yet, the accompanying course book is in the process of being written.\nClick here to open the HSMA web development book in a new tab, or take a look at it below.",
     "crumbs": [
       "Skills So Far",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>(WIP) Creating Web Apps and Dashboards in Python</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>(WIP) Creating Web Apps and Dashboards in Python</span>"
+    ]
+  },
+  {
+    "objectID": "about_this_section.html",
+    "href": "about_this_section.html",
+    "title": "1  About This Section",
+    "section": "",
+    "text": "While this module gets the title modern analytics, you could argue that all of our other content on HSMA comes under that umbrella too!\nIt’s really part of your wider analytics toolkit.\nAs you head through this section, you will find links to the various HSMA books, videos, and code repositories relating to the topics taught on the course.\nApart from the introductory Python - as all of the techniques in the modern analytics module require a reasonable beginner/intermediate understanding of the Python programming language - none of these are prerequisites for this module - but they will enhance what you can create as an analyst.",
+    "crumbs": [
+      "Skills So Far",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>About This Section</span>"
+    ]
+  },
+  {
+    "objectID": "natural_language_processing.html",
+    "href": "natural_language_processing.html",
+    "title": "6  Natural Language Processing",
+    "section": "",
+    "text": "6.1 5A - Introduction to Natural Language Processing (NLP)\nIn this session we’ll begin Module 5 and our journey into Natural Language Processing.\nWe’ll look at some core concepts important for processing text data, and learn a few little neat things we can do with our data along the way, including wordclouds and a method for assessing the similarity of different bits of text.\nRepository Link",
+    "crumbs": [
+      "Skills So Far",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Natural Language Processing</span>"
+    ]
+  },
+  {
+    "objectID": "natural_language_processing.html#b---named-entity-recognition",
+    "href": "natural_language_processing.html#b---named-entity-recognition",
+    "title": "6  Natural Language Processing",
+    "section": "6.2 5B - Named Entity Recognition",
+    "text": "6.2 5B - Named Entity Recognition\n\nIn this session we’ll continue our journey into Natural Language Processing.\nHave you got named entities? Do you need them recognised? Then have we got the session for you! Our session on Named Entity Recognition will talk all about named entities, and recognition of them. Along the way we’ll stop by Sesame Street and Fraggle Rock, talk about Transformers, Parsing, Grammar, POS Tagging and more.\n\nRepository Link",
+    "crumbs": [
+      "Skills So Far",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Natural Language Processing</span>"
+    ]
+  },
+  {
+    "objectID": "natural_language_processing.html#c---sentiment-analysis",
+    "href": "natural_language_processing.html#c---sentiment-analysis",
+    "title": "6  Natural Language Processing",
+    "section": "6.3 5C - Sentiment Analysis",
+    "text": "6.3 5C - Sentiment Analysis\n\nIn this session we don our pirate outfits and sail to the Caribbean as we look for the secret of Sentiment Analysis and Text Classification. We’ll fight dastardly pirates as well as a pirate that’s already dead but just won’t accept it.\n\nRepository Link",
+    "crumbs": [
+      "Skills So Far",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Natural Language Processing</span>"
+    ]
+  },
+  {
+    "objectID": "system_dynamics_agent_based_simulation.html",
+    "href": "system_dynamics_agent_based_simulation.html",
+    "title": "7  (Coming Soon!) System Dynamics and Agent Based Simulation",
+    "section": "",
+    "text": "Coming Soon!\nMaterials from the previous round of the programme (HSMA 5) can be found on our Youtube channel.",
+    "crumbs": [
+      "Skills So Far",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>(Coming Soon!) System Dynamics and Agent Based Simulation</span>"
     ]
   }
 ]

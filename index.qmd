@@ -11,6 +11,7 @@ This module allows us to include a range of techniques that can contribute to yo
 We'll also talk a little bit about what analytics and data science is and how to ensure its potential is maximised in organisations.
 
 We'll be covering a range of techniques.
+
 - Creating documents with Quarto to allow you to automate analysis
 - Writing tests to ensure your code is working as expected
 - Working with data from production sources, such as SQL databases
@@ -22,6 +23,7 @@ We'll be covering a range of techniques.
 - Process mining with the pm4py library
 
 We'll also provide a high-level overview on a range of other things it's useful for the modern analyst to know about. We don't have time to teach them all in the depth we'd like, but we can certainly point you in the direction of some resources to help you with all of the following:
+
 - Statistics
     - tests, such as
         - t-tests

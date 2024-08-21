@@ -1,0 +1,9 @@
+# About This Section
+
+While this module gets the title modern analytics, you could argue that all of our other content on HSMA comes under that umbrella too!
+
+It's really part of your wider analytics toolkit.
+
+As you head through this section, you will find links to the various HSMA books, videos, and code repositories relating to the topics taught on the course.
+
+Apart from the introductory Python - as all of the techniques in the modern analytics module require a reasonable beginner/intermediate understanding of the Python programming language - none of these are prerequisites for this module - but they will enhance what you can create as an analyst.
