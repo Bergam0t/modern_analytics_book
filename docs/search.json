@@ -131,6 +131,50 @@
     ]
   },
   {
+    "objectID": "what_is_quarto.html",
+    "href": "what_is_quarto.html",
+    "title": "10  What is Quarto?",
+    "section": "",
+    "text": "10.1 Quarto Code\nQuarto uses a document format called .qmd\nThis is a mixture of markdown (a widely-used text-based format that allows you to do things like create headers, links and formatted text through a series of simple text commands).\nA quarto document might look something like this. Don’t worry about the specifics for now - we’ll go through them all in detail in subsequent chapters, but hopefully this will give you a broad idea of how a quarto document is set up.\nHere is some text explaining to users how the monthly waiting list figures are calculated.\nThe waiting list as of {python} last_month.strftime('%d %B %Y') was {python} str(df_filtered.tail()['waiting_list_size'].values[0])\nThe output of that code above produces a standalone HTML document that looks like this when we open it up:\nNotice that in the document we are able to scroll, interact with the graph (including tooltips and zooming), and see calculated figures interspersed with the text.\nCan you see why the way Quarto documents are written is such a powerful format for allowing others to audit your code, and to allow version control software to keep track of the full code too? Unlike a Jupyter notebook, there is no additional metadata or embedded outputs that can confuse a version control system.",
+    "crumbs": [
+      "An Introduction to Reproducible Document Creation with Quarto",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>What is Quarto?</span>"
+    ]
+  },
+  {
+    "objectID": "what_is_quarto.html#quarto-code",
+    "href": "what_is_quarto.html#quarto-code",
+    "title": "10  What is Quarto?",
+    "section": "",
+    "text": "---\ntitle: \"Monthly Waiting List Report\"\nexecute:\n  echo: false\njupyter: python3\n---\n\n```{python}\nimport pandas as pd\nimport plotly.express as px\nfrom datetime import date\nfrom dateutil.relativedelta import relativedelta\n\nd = date.today()\nlast_month = d.replace(day=31) - relativedelta(months=1)\nearliest_month = last_month - relativedelta(months=18)\n\ndf = pd.read_csv('waiting_list.csv', parse_dates=[0])\ndf[\"date\"] = pd.to_datetime(df[\"date\"]).dt.date\ndf_filtered = df[(df['date'] &lt;= last_month) & (df['date'] &gt; earliest_month)]\n```\n\n```{python}\npx.line(df, x='date', y='waiting_list_size', title=\"Waiting List Over Last 18 Months\")\n```\n```{python}\ndf_filtered\n```",
+    "crumbs": [
+      "An Introduction to Reproducible Document Creation with Quarto",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>What is Quarto?</span>"
+    ]
+  },
+  {
+    "objectID": "what_is_quarto.html#more-advanced-quarto-examples",
+    "href": "what_is_quarto.html#more-advanced-quarto-examples",
+    "title": "10  What is Quarto?",
+    "section": "10.2 More Advanced Quarto Examples",
+    "text": "10.2 More Advanced Quarto Examples\nThis is a very simple example of what Quarto can do - but your documents can instead grow to include complex layouts and graphs. Let’s take a look at some great examples:\n\n\n\n\n\nTake a look at more examples here.",
+    "crumbs": [
+      "An Introduction to Reproducible Document Creation with Quarto",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>What is Quarto?</span>"
+    ]
+  },
+  {
+    "objectID": "what_is_quarto.html#next-steps",
+    "href": "what_is_quarto.html#next-steps",
+    "title": "10  What is Quarto?",
+    "section": "10.3 Next Steps",
+    "text": "10.3 Next Steps\nLet’s move on to writing our own Quarto documents from scratch.",
+    "crumbs": [
+      "An Introduction to Reproducible Document Creation with Quarto",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>What is Quarto?</span>"
+    ]
+  },
+  {
     "objectID": "automating_spreadsheets_xlsx_writer.html",
     "href": "automating_spreadsheets_xlsx_writer.html",
     "title": "26  Automating Spreadsheet Creation with the XlsxWriter Package",

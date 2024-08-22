@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>HSMA - Modern Analytics - 10&nbsp; (Coming Soon) What is Quarto?</title>
+<title>HSMA - Modern Analytics - 10&nbsp; What is Quarto?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -110,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./what_is_quarto.html">An Introduction to Reproducible Document Creation with Quarto</a></li><li class="breadcrumb-item"><a href="./what_is_quarto.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">(Coming Soon) What is Quarto?</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./what_is_quarto.html">An Introduction to Reproducible Document Creation with Quarto</a></li><li class="breadcrumb-item"><a href="./what_is_quarto.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">What is Quarto?</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -218,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./what_is_quarto.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">(Coming Soon) What is Quarto?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">What is Quarto?</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -685,14 +719,22 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#quarto-code" id="toc-quarto-code" class="nav-link active" data-scroll-target="#quarto-code"><span class="header-section-number">10.1</span> Quarto Code</a></li>
+  <li><a href="#more-advanced-quarto-examples" id="toc-more-advanced-quarto-examples" class="nav-link" data-scroll-target="#more-advanced-quarto-examples"><span class="header-section-number">10.2</span> More Advanced Quarto Examples</a></li>
+  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps"><span class="header-section-number">10.3</span> Next Steps</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./what_is_quarto.html">An Introduction to Reproducible Document Creation with Quarto</a></li><li class="breadcrumb-item"><a href="./what_is_quarto.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">(Coming Soon) What is Quarto?</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./what_is_quarto.html">An Introduction to Reproducible Document Creation with Quarto</a></li><li class="breadcrumb-item"><a href="./what_is_quarto.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">What is Quarto?</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">(Coming Soon) What is Quarto?</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">What is Quarto?</span></h1>
 </div>
 
 
@@ -709,8 +751,107 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>Quarto is a publishing system that allows you to mix code, images, text and more in a manner that is reproducible, can produce multiple outputs from a single source file, and can be version controlled.</p>
+<p>Quarto documents can be used to produce</p>
+<ul>
+<li>scrollable reports with static or interactive graphs and maps</li>
+<li>standalone dashboards (with some limited filtering and interactive capability too)</li>
+<li>PDF documents</li>
+<li>word documents</li>
+<li>slide decks</li>
+<li>ebooks</li>
+<li>websites</li>
+<li>scientific journal articles and more!</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For those of you who have worked with R markdown before, this might all sound familiar - and that’s because it is! Quarto is an evolution, building on the lessons of R markdown, but that adds the benefits of being compatible with more languages and with more features being brought into the core feature set rather than having to be brought in via separate libraries (e.g.&nbsp;books and dashboards are now a core part of Quarto instead of relying on the bookdown and flexdashboard packages respectively).</p>
+</div>
+</div>
+<p>Imagine you have a report that you need to produce every quarter, month, week, or even every day. With Quarto, the production of that report becomes as simple as clicking a button - or even scheduling your machine to automatically generate the report behind-the-scenes.</p>
+<p>The interactive HTML documents produced in Quarto have the bonus of being completely self-contained. Unlike Streamlit apps or Shiny apps, where some sort of server is generally required to power the interactivity, Quarto documents are a way to send out interactive reports with a wealth of data in while not needing this additional infrastructure; you can pop them on a shared drive or attach them to an email.</p>
+<p>So why not use Quarto all of the time instead of Streamlit? Well, there are limits to just how interactive a Quarto document can be - the things we saw Streamlit apps do in the previous module, like creating brand new word clouds on the fly, or running a discrete event simulation depending on the parameters a user has input, do require some sort of server to run code and return new outputs.</p>
+<p>But you’ll be amazed at what you can do with just the power of Quarto - and for a report where users need no, or limited, interactivity, then it’s an incredibly powerful, flexible and efficient choice that could save you hundreds of hours while also improving the quality, robustness and auditability of the reports you output.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>All of the HSMA books are written using Quarto!</p>
+<p>With the power of <strong>Quarto extensions</strong> built by the community, you can embed all sorts of useful things in your Quarto documents - like interactive code cells and self-contained Streamlit apps running without a server.</p>
+</div>
+</div>
+<section id="quarto-code" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="quarto-code"><span class="header-section-number">10.1</span> Quarto Code</h2>
+<p>Quarto uses a document format called <code>.qmd</code></p>
+<p>This is a mixture of <strong>markdown</strong> (a widely-used text-based format that allows you to do things like create headers, links and formatted text through a series of simple text commands).</p>
+<p>A quarto document might look something like this. Don’t worry about the specifics for now - we’ll go through them all in detail in subsequent chapters, but hopefully this will give you a broad idea of how a quarto document is set up.</p>
+<hr>
+<pre><code>---
+title: "Monthly Waiting List Report"
+execute:
+  echo: false
+jupyter: python3
+---</code></pre>
+<p>Here is some text explaining to users how the monthly waiting list figures are calculated.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="in">import pandas as pd</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="in">import plotly.express as px</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="in">from datetime import date</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="in">from dateutil.relativedelta import relativedelta</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="in">d = date.today()</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="in">last_month = d.replace(day=31) - relativedelta(months=1)</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="in">earliest_month = last_month - relativedelta(months=18)</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="in">df = pd.read_csv('waiting_list.csv', parse_dates=[0])</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="in">df["date"] = pd.to_datetime(df["date"]).dt.date</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="in">df_filtered = df[(df['date'] &lt;= last_month) &amp; (df['date'] &gt; earliest_month)]</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The waiting list as of <code>{python} last_month.strftime('%d %B %Y')</code> was <code>{python} str(df_filtered.tail()['waiting_list_size'].values[0])</code></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="in">px.line(df, x='date', y='waiting_list_size', title="Waiting List Over Last 18 Months")</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="in">df_filtered</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+<p>The output of that code above produces a standalone HTML document that looks like this when we open it up:</p>
+<div align="center">
+<iframe width="1200" height="700" src="assets/firefox_iE83EsUKoD.gif"></iframe>
+</div>
+<p>Notice that in the document we are able to scroll, interact with the graph (including tooltips and zooming), and see calculated figures interspersed with the text.</p>
+<p>Can you see why the way Quarto documents are written is such a powerful format for allowing others to audit your code, and to allow version control software to keep track of the full code too? Unlike a Jupyter notebook, there is no additional metadata or embedded outputs that can confuse a version control system.</p>
+</section>
+<section id="more-advanced-quarto-examples" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="more-advanced-quarto-examples"><span class="header-section-number">10.2</span> More Advanced Quarto Examples</h2>
+<p>This is a very simple example of what Quarto can do - but your documents can instead grow to include complex layouts and graphs. Let’s take a look at some great examples:</p>
+<iframe width="1200" height="700" src="https://quarto-dev.github.io/quarto-gallery/page-layout/tufte.html" title="Advanced Quarto Example 1"></iframe>
+<iframe width="1200" height="700" src="https://ivelasq.github.io/mortgage-dashboard/" title="Advanced Quarto Example 2"></iframe>
+<iframe width="1200" height="700" src="https://quarto.org/docs/presentations/revealjs/demo/#/column-layout" title="Advanced Quarto Example 3"></iframe>
+<iframe width="1200" height="700" src="https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/" title="Advanced Quarto Example 4"></iframe>
+<iframe width="1200" height="700" src="https://rap4mads.eu/" title="Advanced Quarto Example 4"></iframe>
+<p>Take a look at more examples <a href="https://quarto.org/docs/gallery/">here</a>.</p>
+</section>
+<section id="next-steps" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="next-steps"><span class="header-section-number">10.3</span> Next Steps</h2>
+<p>Let’s move on to writing our own Quarto documents from scratch.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script>

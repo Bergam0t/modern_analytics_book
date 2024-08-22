@@ -1,1 +1,129 @@
-# (Coming Soon) What is Quarto?
+---
+title: What is Quarto?
+execute:
+  echo: fenced
+jupyter: python3
+---
+
+Quarto is a publishing system that allows you to mix code, images, text and more in a manner that is reproducible, can produce multiple outputs from a single source file, and can be version controlled.
+
+Quarto documents can be used to produce
+
+- scrollable reports with static or interactive graphs and maps
+- standalone dashboards (with some limited filtering and interactive capability too)
+- PDF documents
+- word documents
+- slide decks
+- ebooks
+- websites
+- scientific journal articles
+and more!
+
+:::{.callout-tip}
+For those of you who have worked with R markdown before, this might all sound familiar - and that's because it is! Quarto is an evolution, building on the lessons of R markdown, but that adds the benefits of being compatible with more languages and with more features being brought into the core feature set rather than having to be brought in via separate libraries (e.g. books and dashboards are now a core part of Quarto instead of relying on the bookdown and flexdashboard packages respectively).
+:::
+
+Imagine you have a report that you need to produce every quarter, month, week, or even every day. With Quarto, the production of that report becomes as simple as clicking a button - or even scheduling your machine to automatically generate the report behind-the-scenes.
+
+The interactive HTML documents produced in Quarto have the bonus of being completely self-contained. Unlike Streamlit apps or Shiny apps, where some sort of server is generally required to power the interactivity, Quarto documents are a way to send out interactive reports with a wealth of data in while not needing this additional infrastructure; you can pop them on a shared drive or attach them to an email.
+
+So why not use Quarto all of the time instead of Streamlit? Well, there are limits to just how interactive a Quarto document can be - the things we saw Streamlit apps do in the previous module, like creating brand new word clouds on the fly, or running a discrete event simulation depending on the parameters a user has input, do require some sort of server to run code and return new outputs.
+
+But you'll be amazed at what you can do with just the power of Quarto - and for a report where users need no, or limited, interactivity, then it's an incredibly powerful, flexible and efficient choice that could save you hundreds of hours while also improving the quality, robustness and auditability of the reports you output.
+
+:::{.callout-tip}
+All of the HSMA books are written using Quarto!
+
+With the power of **Quarto extensions** built by the community, you can embed all sorts of useful things in your Quarto documents - like interactive code cells and self-contained Streamlit apps running without a server.
+:::
+
+## Quarto Code
+
+Quarto uses a document format called `.qmd`
+
+This is a mixture of **markdown** (a widely-used text-based format that allows you to do things like create headers, links and formatted text through a series of simple text commands).
+
+A quarto document might look something like this. Don't worry about the specifics for now - we'll go through them all in detail in subsequent chapters, but hopefully this will give you a broad idea of how a quarto document is set up.
+
+---
+
+```
+---
+title: "Monthly Waiting List Report"
+execute:
+  echo: false
+jupyter: python3
+---
+```
+Here is some text explaining to users how the monthly waiting list figures are calculated.
+
+```{{python}}
+import pandas as pd
+import plotly.express as px
+from datetime import date
+from dateutil.relativedelta import relativedelta
+
+d = date.today()
+last_month = d.replace(day=31) - relativedelta(months=1)
+earliest_month = last_month - relativedelta(months=18)
+
+df = pd.read_csv('waiting_list.csv', parse_dates=[0])
+df["date"] = pd.to_datetime(df["date"]).dt.date
+df_filtered = df[(df['date'] <= last_month) & (df['date'] > earliest_month)]
+```
+
+The waiting list as of `{{python}} last_month.strftime('%d %B %Y')` was `{{python}} str(df_filtered.tail()['waiting_list_size'].values[0])`
+
+```{{python}}
+px.line(df, x='date', y='waiting_list_size', title="Waiting List Over Last 18 Months")
+```
+
+```{{python}}
+df_filtered
+```
+
+---
+
+The output of that code above produces a standalone HTML document that looks like this when we open it up:
+
+
+```{=html}
+<div align="center">
+<iframe width="1200" height="700" src="assets/firefox_iE83EsUKoD.gif"></iframe>
+</div>
+```
+
+Notice that in the document we are able to scroll, interact with the graph (including tooltips and zooming), and see calculated figures interspersed with the text.
+
+Can you see why the way Quarto documents are written is such a powerful format for allowing others to audit your code, and to allow version control software to keep track of the full code too? Unlike a Jupyter notebook, there is no additional metadata or embedded outputs that can confuse a version control system.
+
+## More Advanced Quarto Examples
+
+This is a very simple example of what Quarto can do - but your documents can instead grow to include complex layouts and graphs. Let's take a look at some great examples:
+
+```{=html}
+<iframe width="1200" height="700" src="https://quarto-dev.github.io/quarto-gallery/page-layout/tufte.html" title="Advanced Quarto Example 1"></iframe>
+```
+
+```{=html}
+<iframe width="1200" height="700" src="https://ivelasq.github.io/mortgage-dashboard/" title="Advanced Quarto Example 2"></iframe>
+```
+
+```{=html}
+<iframe width="1200" height="700" src="https://quarto.org/docs/presentations/revealjs/demo/#/column-layout" title="Advanced Quarto Example 3"></iframe>
+```
+
+```{=html}
+<iframe width="1200" height="700" src="https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/" title="Advanced Quarto Example 4"></iframe>
+```
+
+```{=html}
+<iframe width="1200" height="700" src="https://rap4mads.eu/" title="Advanced Quarto Example 4"></iframe>
+```
+
+
+Take a look at more examples [here](https://quarto.org/docs/gallery/).
+
+## Next Steps
+
+Let's move on to writing our own Quarto documents from scratch.
