@@ -1,0 +1,29 @@
+---
+title: "Quarto Document Elements"
+format: html
+---
+
+
+# This is a level 1 header
+## This is a level 2 header
+### This is a level 3 header
+#### This is a level 4 header
+##### This is a level 5 header
+
+#This won't work
+
+# But this will!
+
+# Images
+
+Images are created using a similar notation to links.
+
+They are done in the format
+
+`![]()`
+
+- The ! lets markdown know it's an image
+- Inside the [] you can optionally put some 'alt-text', which will display for screen readers or if the image fails to load for any reason.
+- Inside the () you place a link to the image relative to the location of the document OR on the web.
+
+![](https://avatars.githubusercontent.com/u/107476423?s=400&u=84c1b49966ea958785a8954726c116b7952b2041&v=4)

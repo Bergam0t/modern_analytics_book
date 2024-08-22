@@ -1,1 +1,42 @@
 # (Coming Soon) Code Chunks
+
+While being able to write documents with all of these built-in features from the previous chapter is all well and good, one of the biggest draws of Quarto is being able to put all of your code to process and visualise your data inside the document, removing the need for any copying-and-pasting.
+
+:::{.callout-tip}
+As your Quarto documents get bigger and more complex, it can be a good idea to move some of the code out into separate files to make it neater and easier to debug - but for now, we'll just assume that we're putting the end-to-end code inside the documents.
+:::
+
+## Your first code block
+
+Code blocks take the following format:
+
+```{{language}}
+your_code
+```
+
+For example, a Python block might look like this:
+
+```{{python}}
+import pandas as pd
+
+address = 'https://raw.githubusercontent.com/MichaelAllen1966/' + \
+            '1804_python_healthcare/master/titanic/data/train.csv'
+
+data = pd.read_csv(address)
+
+data.head()
+```
+
+And the output would be this.
+
+
+```{python}
+import pandas as pd
+
+address = 'https://raw.githubusercontent.com/MichaelAllen1966/' + \
+            '1804_python_healthcare/master/titanic/data/train.csv'
+
+data = pd.read_csv(address)
+
+data.head()
+```

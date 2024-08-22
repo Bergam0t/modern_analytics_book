@@ -1,1 +1,52 @@
-# (Coming Soon) Installing and Setting Up Quarto
+# Installing and Setting Up Quarto
+
+Quarto itself is a standalone piece of software that needs to be downloaded and installed.
+
+[https://quarto.org/docs/download/](https://quarto.org/docs/download/)
+
+It's recommended to choose the 'current' version for your operating system.
+
+:::{.callout-note}
+This is different to rmarkdown, which was just an R package that could be installed without requiring the use of a separate installer.
+
+If you are having difficulty getting your organisation to approve Quarto but they are more flexible on R package installs, consider trying out Rmarkdown instead to begin demonstrating the value of these code-based document engines to them. Your rmarkdown skills will be very transferrable to quarto, and [rmarkdown does actually support Python!](https://bookdown.org/yihui/rmarkdown-cookbook/eng-python.html).
+:::
+
+:::{.callout-tip}
+
+You may then want to check that it is working correctly, though this is an optional step.
+
+Once installed, open up a command prompt.
+
+![](assets/2024-08-22-14-34-30.png)
+
+Run the command `quarto check`
+
+![](assets/2024-08-22-14-35-24.png)
+
+You may see some warnings or error messages; if they relate to Python, don't worry too much, as this will just be looking at the packages with the default environment selected. When running quarto commands within VSCode, we will be selecting a specific environment that will contain all of the required packages.
+:::
+
+## VSCode Setup
+
+Within VSCode, we will want to install the Quarto extension.
+
+In VSCode, choose 'extensions' from the sidebar.
+
+![](assets/2024-08-22-14-42-31.png)
+
+Search the extension marketplace for 'Quarto'
+
+![](assets/2024-08-22-14-42-57.png)
+
+Choose the Quarto extension that shows up and install it.
+
+![](assets/2024-08-22-14-43-27.png)
+
+Once installed, quarto documents will automatically show a 'preview' button at the top right.
+
+![](assets/2024-08-22-14-44-29.png)
+
+This will not show up for other document types like .py files or .ipynb files.
+
+The preview button will automatically open a preview server in either your default web browser or within vscode, so you can see how your document is looking as you work on it and iteratively update it. We'll talk more about the details of this preview later in the document.

@@ -1,0 +1,108 @@
+# Writing and Previewing Your First Quarto Document
+
+Let's start with the simplest possible Quarto document we can make.
+
+We'll create a new file in VSCode.
+
+![](assets/2024-08-22-15-03-28.png)
+
+If Quarto has been installed, you should be given the option to create a 'Quarto Document'.
+
+![](assets/2024-08-22-15-03-51.png)
+
+Do this, then replace the 'untitled' in the `title` field with "My First Quarto Document"
+
+```
+---
+title: "My First Quarto Document"
+format: html
+---
+
+Hello world!
+```
+
+This document has two main elements:
+
+1. A YAML header giving the document title and output format
+
+2. Some text
+
+YAML is a recursive acronym standing for 'YAML Ain't Markup Language'.
+
+I know - we've talked before about how hilarious programmers are...
+
+In short, in the context of Quarto documents, it's a way to specify a wide range of details about your document using a simple `key: value` format. We'll talk more later about the different things that can be set here, but the title is a good place to start. On the left of the colon we have the name of the parameter, and on the right we have the value.
+
+The YAML header appears at the very beginning of each Quarto document, sandwiched between two rows of
+
+```
+---
+```
+
+We can now save this document.
+
+When saving, just check that the filename ends in `.qmd`, which stands for `Quarto Markdown Document`.
+
+![](assets/2024-08-22-15-12-34.png)
+
+Markdown is the text langugage we'll use as we get further into Quarto to denote things like headers, images, links, formatted text, and more.
+
+## Previewing the document
+
+The next step for our quarto document is to preview it.
+
+When you click the preview button, a terminal window will open up and display some details about what's happening behind the scenes.
+
+If something goes wrong, there will be some red text!
+
+If it goes right, it will look roughly like this screenshot.
+
+![](assets/2024-08-22-15-17-26.png)
+
+Depending on your Quarto extension settings, the previewed document will either open up within Visual Studio Code (usually as a panel on the right-hand-side of your screen), or it will open up in a new window. Opening up within VSCode should be the default behaviour for the extension.
+
+If it appears to have not opened up anywhere, check the end of the message displayed in the terminal.
+
+![](assets/2024-08-22-15-26-26.png)
+
+It will indicate the web address to navigate to to view the previewed document. The 'port' - the bit after the final colon - is randomly chosen when you begin the document preview, so will not be the same every time you start a new preview.
+
+We can see here that the text is displayed and the URL matches what was displayed in the built-in terminal.
+
+![](assets/2024-08-22-15-28-35.png)
+
+:::{.callout-tip}
+For a single document, previewing the document saves a copy of the final output to the same folder as your `*.qmd* document.
+
+In some more complex types of project, like books, there will be extra steps required to produce the final document - but for now, the preview button will work wonders!
+:::
+
+
+## Making Changes
+
+Now let's make some changes to our document. Let's add some additional text so that our file now looks like this.
+
+```
+---
+title: "My First Quarto Document"
+format: html
+---
+
+Hello world!
+
+This is some additional text.
+```
+
+Changes will not appear in the document preview straight away; it doesn't update live as you type.
+
+When you have finished making your change, click on the 'preview' button again. This will automatically save the changes you have made to your quarto document and update the preview to reflect those changes.
+
+```{=html}
+<div align="center">
+<iframe width="1200" height="700" src="assets/Code_pYlJdxlDDN.gif"></iframe>
+</div>
+```
+
+:::{.callout-tip}
+Within the Quarto extension options, there is a setting called 'Render on Save'. Turning this on means you will not need to click on the preview button each time, but can be problematic if your document takes a long time to run, so you may not want this to be the default behaviour.
+:::

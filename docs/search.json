@@ -175,14 +175,190 @@
     ]
   },
   {
+    "objectID": "quarto_install_setup.html",
+    "href": "quarto_install_setup.html",
+    "title": "11  Installing and Setting Up Quarto",
+    "section": "",
+    "text": "11.1 VSCode Setup\nWithin VSCode, we will want to install the Quarto extension.\nIn VSCode, choose ‘extensions’ from the sidebar.\nSearch the extension marketplace for ‘Quarto’\nChoose the Quarto extension that shows up and install it.\nOnce installed, quarto documents will automatically show a ‘preview’ button at the top right.\nThis will not show up for other document types like .py files or .ipynb files.\nThe preview button will automatically open a preview server in either your default web browser or within vscode, so you can see how your document is looking as you work on it and iteratively update it. We’ll talk more about the details of this preview later in the document.",
+    "crumbs": [
+      "An Introduction to Reproducible Document Creation with Quarto",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Installing and Setting Up Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "your_first_quarto_document.html",
+    "href": "your_first_quarto_document.html",
+    "title": "12  Writing and Previewing Your First Quarto Document",
+    "section": "",
+    "text": "12.1 Previewing the document\nThe next step for our quarto document is to preview it.\nWhen you click the preview button, a terminal window will open up and display some details about what’s happening behind the scenes.\nIf something goes wrong, there will be some red text!\nIf it goes right, it will look roughly like this screenshot.\nDepending on your Quarto extension settings, the previewed document will either open up within Visual Studio Code (usually as a panel on the right-hand-side of your screen), or it will open up in a new window. Opening up within VSCode should be the default behaviour for the extension.\nIf it appears to have not opened up anywhere, check the end of the message displayed in the terminal.\nIt will indicate the web address to navigate to to view the previewed document. The ‘port’ - the bit after the final colon - is randomly chosen when you begin the document preview, so will not be the same every time you start a new preview.\nWe can see here that the text is displayed and the URL matches what was displayed in the built-in terminal.",
+    "crumbs": [
+      "An Introduction to Reproducible Document Creation with Quarto",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Writing and Previewing Your First Quarto Document</span>"
+    ]
+  },
+  {
+    "objectID": "your_first_quarto_document.html#previewing-the-document",
+    "href": "your_first_quarto_document.html#previewing-the-document",
+    "title": "12  Writing and Previewing Your First Quarto Document",
+    "section": "",
+    "text": "Tip\n\n\n\nFor a single document, previewing the document saves a copy of the final output to the same folder as your `.qmd document.\nIn some more complex types of project, like books, there will be extra steps required to produce the final document - but for now, the preview button will work wonders!",
+    "crumbs": [
+      "An Introduction to Reproducible Document Creation with Quarto",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Writing and Previewing Your First Quarto Document</span>"
+    ]
+  },
+  {
+    "objectID": "your_first_quarto_document.html#making-changes",
+    "href": "your_first_quarto_document.html#making-changes",
+    "title": "12  Writing and Previewing Your First Quarto Document",
+    "section": "12.2 Making Changes",
+    "text": "12.2 Making Changes\nNow let’s make some changes to our document. Let’s add some additional text so that our file now looks like this.\n---\ntitle: \"My First Quarto Document\"\nformat: html\n---\n\nHello world!\n\nThis is some additional text.\nChanges will not appear in the document preview straight away; it doesn’t update live as you type.\nWhen you have finished making your change, click on the ‘preview’ button again. This will automatically save the changes you have made to your quarto document and update the preview to reflect those changes.\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nWithin the Quarto extension options, there is a setting called ‘Render on Save’. Turning this on means you will not need to click on the preview button each time, but can be problematic if your document takes a long time to run, so you may not want this to be the default behaviour.",
+    "crumbs": [
+      "An Introduction to Reproducible Document Creation with Quarto",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Writing and Previewing Your First Quarto Document</span>"
+    ]
+  },
+  {
+    "objectID": "quarto_document_elements.html",
+    "href": "quarto_document_elements.html",
+    "title": "13  Quarto Document Elements",
+    "section": "",
+    "text": "13.1 Headers\nWithin our document, we will want to be able to separate out parts of the document with headers and subheaders.\nThe headers can also automatically be used to build an interactive table of contents for the document if we tell Quarto that we want a table of contents (or, later, if we’re creating a special kind of Quarto document that makes tables of contents automatically, like an ebook).\nHeaders are denoted using the # symbol. This is the same symbol we use for comments in our Python or R code, but if it’s just in a Quarto document (and not inside a code block - more on those in the next chapter), then it will be interpreted and rendered as a header.\nThe above will render in your document like this:",
+    "crumbs": [
+      "An Introduction to Reproducible Document Creation with Quarto",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Quarto Document Elements</span>"
+    ]
+  },
+  {
+    "objectID": "quarto_document_elements.html#headers",
+    "href": "quarto_document_elements.html#headers",
+    "title": "13  Quarto Document Elements",
+    "section": "",
+    "text": "# This is a level 1 header\n## This is a level 2 header\n### This is a level 3 header\n#### This is a level 4 header\n##### This is a level 5 header\n\n\n\n\n\n\n\n\nTip\n\n\n\nMake sure there is a gap between the hash and the word you want to make into a title!\n#This won't work\n# But this will!",
+    "crumbs": [
+      "An Introduction to Reproducible Document Creation with Quarto",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Quarto Document Elements</span>"
+    ]
+  },
+  {
+    "objectID": "quarto_document_elements.html#text-formatting",
+    "href": "quarto_document_elements.html#text-formatting",
+    "title": "13  Quarto Document Elements",
+    "section": "13.2 Text Formatting",
+    "text": "13.2 Text Formatting\nText can be formatted using the * character.\nYou must wrap the text in a single * for italics, ** for bold, and *** for bold/italic.\n*This is italic text*\nThis is italic text\n**This is bold text**\nThis is bold text\n***This is a mix***\nThis is a mix\nYou can *use* a mixture **in the** same ***sentence***.\nYou can use a mixture in the same sentence.",
+    "crumbs": [
+      "An Introduction to Reproducible Document Creation with Quarto",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Quarto Document Elements</span>"
+    ]
+  },
+  {
+    "objectID": "quarto_document_elements.html#links",
+    "href": "quarto_document_elements.html#links",
+    "title": "13  Quarto Document Elements",
+    "section": "13.3 Links",
+    "text": "13.3 Links\nSimple links can be created like this:\n&lt;https://www.youtube.com/@hsma&gt;\nhttps://www.youtube.com/@hsma\nIf you don’t want the link to display the actual URL and would rather have some nice text, they are created with the following syntax:\n[Text to Display](https://your-link-here.com)\nFor example, you can link to the HSMA website like so:\n[Click here to open up the HSMA website](https://www.youtube.com/@hsma)\nClick here to open up the HSMA website",
+    "crumbs": [
+      "An Introduction to Reproducible Document Creation with Quarto",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Quarto Document Elements</span>"
+    ]
+  },
+  {
+    "objectID": "quarto_document_elements.html#images",
+    "href": "quarto_document_elements.html#images",
+    "title": "13  Quarto Document Elements",
+    "section": "13.4 Images",
+    "text": "13.4 Images\nImages are created using a similar notation to links.\nThey are done in the format\n![]()\n\nThe ! lets markdown know it’s an image\nInside the [] you can optionally put a caption.\nInside the () you place a link to the image relative to the location of the document OR on the web.\n\n\n13.4.1 Web Image Example\n![](https://avatars.githubusercontent.com/u/107476423?s=400&u=84c1b49966ea958785a8954726c116b7952b2041&v=4)\n\n\n\n13.4.2 Local Image Example\n![Image of a white robot surrounded by dashboards, holding a magnifying glass and thinking](resources/cover_image.jpeg)\nThis points towards an image where there is a folder called ‘resources’ at the same level as the .qmd file being written. It moves into the resources folder, then looks for an image called cover_image.jpeg.\n\n\n\nImage of a white robot surrounded by dashboards, holding a magnifying glass and thinking",
+    "crumbs": [
+      "An Introduction to Reproducible Document Creation with Quarto",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Quarto Document Elements</span>"
+    ]
+  },
+  {
+    "objectID": "quarto_document_elements.html#gifs",
+    "href": "quarto_document_elements.html#gifs",
+    "title": "13  Quarto Document Elements",
+    "section": "13.5 Gifs",
+    "text": "13.5 Gifs\nGifs are a little different - we embed them in something called an iframe.\nWe structure these blocks a little differently, starting with three backticks (``````) and {=html}\n{=html} &lt;div align=\"center\"&gt; &lt;iframe width=\"1200\" height=\"700\" src=\"assets/Code_pYlJdxlDDN.gif\"&gt;&lt;/iframe&gt; &lt;/div&gt;",
+    "crumbs": [
+      "An Introduction to Reproducible Document Creation with Quarto",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Quarto Document Elements</span>"
+    ]
+  },
+  {
+    "objectID": "quarto_document_elements.html#embedding-a-webpage",
+    "href": "quarto_document_elements.html#embedding-a-webpage",
+    "title": "13  Quarto Document Elements",
+    "section": "13.6 Embedding a webpage",
+    "text": "13.6 Embedding a webpage\nYou can also embed entire webpages into your Quarto document.\n\n\n\n\n\n\nTip\n\n\n\nKeep in mind that some websites don’t like to be embedded and won’t work properly.\nCheck the preview and the final .html document to confirm that it’s ok!\n\n\n{=html} &lt;iframe width=\"1200\" height=\"800\" src=\"https://sites.google.com/nihr.ac.uk/hsma/home\" title=\"HSMA - the little book of DES\"&gt;&lt;/iframe&gt;",
+    "crumbs": [
+      "An Introduction to Reproducible Document Creation with Quarto",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Quarto Document Elements</span>"
+    ]
+  },
+  {
+    "objectID": "quarto_document_elements.html#videos",
+    "href": "quarto_document_elements.html#videos",
+    "title": "13  Quarto Document Elements",
+    "section": "13.7 Videos",
+    "text": "13.7 Videos\nVideos hosted on sites like youtube or platforms like Google Drive can be embedded like so.\n\n\nWhile you can point directly to local .mpeg files, this could cause problems with file size of the resulting document.",
+    "crumbs": [
+      "An Introduction to Reproducible Document Creation with Quarto",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Quarto Document Elements</span>"
+    ]
+  },
+  {
+    "objectID": "quarto_document_elements.html#lists",
+    "href": "quarto_document_elements.html#lists",
+    "title": "13  Quarto Document Elements",
+    "section": "13.8 Lists",
+    "text": "13.8 Lists\nLists can be created in a number of ways\n- list item 1\n- list item 2\n    - list sub item\n- list item 3\n\nlist item 1\nlist item 2\n\nlist sub item\n\nlist item 3\n\n* list item 1\n* list item 2\n    * list sub item\n* list item 3\n\nlist item 1\nlist item\n\nlist sub item\n\nlist item 3\n\n1. list item 1\n2. list item 2\n    a. list subitem\n4. list item 3\n\nlist item 1\nlist item 2\n\nlist subitem\n\nlist item 3\n\n1. list item 1\n1. list item 2\n    1. list subitem\n1. list item 3\n\nlist item 1\nlist item 2\n\nlist subitem\n\nlist item 3\n\n\n\n\n\n\n\nWarning\n\n\n\nLists will not work if you don’t include a blank line before starting them.\nFor example,\nMy shopping list contains\n- Now that's what I call 80s - vol 2 CD\n- Back To The Future II - Extended Mega Cut VHS\n- Return to Monkey Island\nwill not work, and will display like this:\nMy shopping list contains - Now that’s what I call 80s - vol 2 CD - Back To The Future II - Extended Mega Cut VHS - Return to Monkey Island\nIf we instead ensure there is a gap, like so:\nMy shopping list contains\n\n- Now that's what I call 80s - vol 2 CD\n- Back To The Future II - Extended Mega Cut VHS\n- Return to Monkey Island\nit will display as expected:\nMy shopping list contains\n\nNow that’s what I call 80s - vol 2 CD\nBack To The Future II - Extended Mega Cut VHS\nReturn to Monkey Island",
+    "crumbs": [
+      "An Introduction to Reproducible Document Creation with Quarto",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Quarto Document Elements</span>"
+    ]
+  },
+  {
+    "objectID": "quarto_document_elements.html#callouts",
+    "href": "quarto_document_elements.html#callouts",
+    "title": "13  Quarto Document Elements",
+    "section": "13.9 Callouts",
+    "text": "13.9 Callouts\nCallouts allow you to draw attention to different parts of your document.\nThere are 5 key types:\n\n{.callout-tip}\n{.callout-note}\n{.callout-warning}\n{.callout-caution}\n{.callout-important}\n\nEach of these are created as follows\n:::{.callout-tip}\n# Here's an optional header inside the callout that will act as a title\n\nHere's the text in the callout - but I can include images, videos, links and more too.\n:::\n\n\n\n\n\n\nHere’s an optional header inside the callout that will act as a title\n\n\n\nHere’s the text in the callout - but I can include images, videos, links and more too.\n\n\n:::{.callout-note}\nHere's an example without a title.\n:::\n\n\n\n\n\n\nNote\n\n\n\nHere’s an example without a title.",
+    "crumbs": [
+      "An Introduction to Reproducible Document Creation with Quarto",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Quarto Document Elements</span>"
+    ]
+  },
+  {
+    "objectID": "quarto_document_elements.html#expanders",
+    "href": "quarto_document_elements.html#expanders",
+    "title": "13  Quarto Document Elements",
+    "section": "13.10 Expanders",
+    "text": "13.10 Expanders\nSetting collapse=\"true\" in a callout means the callout block will start folded (collapsed), and users will have to click to expand it.\nThis can be very handy if you know some users will want to be provided with additional information but it may be overwhelming or not useful to everyone.\nWhatever you provide as a title will be visible to the reader before expanding.\n:::{.callout-note collapse=\"true\"}\n# Click me to expand\nThis was hidden!\n:::\n\n\n\n\n\n\nClick me to expand\n\n\n\n\n\nThis was hidden!\n\n\n\nIf you don’t provide a title, then the type of the callout (e.g. note, tip) will appear instead.\n:::{.callout-note collapse=\"true\"}\nThis was hidden!\n:::\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nThis was hidden!",
+    "crumbs": [
+      "An Introduction to Reproducible Document Creation with Quarto",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Quarto Document Elements</span>"
+    ]
+  },
+  {
+    "objectID": "quarto_document_elements.html#tabs",
+    "href": "quarto_document_elements.html#tabs",
+    "title": "13  Quarto Document Elements",
+    "section": "13.11 Tabs",
+    "text": "13.11 Tabs\nSometimes you may wish to provide lots of information while minimising scrolling, or you have several very similar bits of information to display (for example, the same data or graph but for several distinct teams).\nTabs can provide a very intuitive way of displaying this information, preventing your documents from becoming overly long and cumbersome.\n::: {.panel-tabset}\n\n## Tab 1\n\nHere's a cat!\n![](https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Orange_tabby_cat_sitting_on_fallen_leaves-Hisashi-01A.jpg/675px-Orange_tabby_cat_sitting_on_fallen_leaves-Hisashi-01A.jpg)\n\n## Tab 2\n\nHere's another cat!\n![](https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Sheba1.JPG/600px-Sheba1.JPG)\n\n:::\n\nTab 1Tab 2\n\n\nHere’s a cat! \n\n\nHere’s another cat! \n\n\n\n\n\n\n\n\n\nTip\n\n\n\nIn a later chapter, we’ll talk about how you could create a document that automatically creates the correct number of tabs for a given context - for example, if you are auto-generating documents for a series of regions, the number of teams - and therefore the number of tabs you want - may vary from document to document, and it can be more efficient and futureproof to use code to determine the tabs.",
+    "crumbs": [
+      "An Introduction to Reproducible Document Creation with Quarto",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Quarto Document Elements</span>"
+    ]
+  },
+  {
     "objectID": "automating_spreadsheets_xlsx_writer.html",
     "href": "automating_spreadsheets_xlsx_writer.html",
-    "title": "26  Automating Spreadsheet Creation with the XlsxWriter Package",
+    "title": "26  (Coming Soon) Automating Spreadsheet Creation with the XlsxWriter Package",
     "section": "",
     "text": "As much as we want our end users to",
     "crumbs": [
       "Further Automation",
-      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Automating Spreadsheet Creation with the XlsxWriter Package</span>"
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>(Coming Soon) Automating Spreadsheet Creation with the XlsxWriter Package</span>"
     ]
   }
 ]

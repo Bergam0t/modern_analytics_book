@@ -23,9 +23,9 @@ book:
       - what_is_quarto.qmd
       - quarto_install_setup.qmd
       - your_first_quarto_document.qmd
-      - intro_to_yaml_document_headers.qmd
       - quarto_document_elements.qmd
       - code_chunks.qmd
+      - intro_to_yaml_document_headers.qmd
       - layout_customisation.qmd
       - parameters.qmd
       - automating_quarto_document_generation.qmd
