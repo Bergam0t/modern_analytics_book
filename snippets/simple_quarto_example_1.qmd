@@ -1,0 +1,33 @@
+---
+title: "Monthly Waiting List Report"
+execute:
+  echo: false
+jupyter: python3
+---
+
+Here is some text explaining to users how the monthly waiting list figures are calculated.
+
+```{python}
+import pandas as pd
+import plotly.express as px
+from datetime import date
+from dateutil.relativedelta import relativedelta
+
+d = date.today()
+last_month = d.replace(day=31) - relativedelta(months=1)
+earliest_month = last_month - relativedelta(months=18)
+
+df = pd.read_csv('waiting_list.csv', parse_dates=[0])
+df["date"] = pd.to_datetime(df["date"]).dt.date
+df_filtered = df[(df['date'] <= last_month) & (df['date'] > earliest_month)]
+```
+
+The waiting list as of `{python} last_month.strftime('%d %B %Y')` was `{python} str(df_filtered.tail()['waiting_list_size'].values[0])`
+
+```{python}
+px.line(df, x='date', y='waiting_list_size', title="Waiting List Over Last 18 Months")
+```
+
+```{python}
+df_filtered
+```
