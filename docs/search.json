@@ -351,6 +351,83 @@
     ]
   },
   {
+    "objectID": "code_chunks.html",
+    "href": "code_chunks.html",
+    "title": "14  Code Chunks",
+    "section": "",
+    "text": "14.1 Your first code block\nCode blocks take the following format:\nFor example, a Python block might look like this:\nAnd the output would be this.\nimport pandas as pd\n\naddress = 'https://raw.githubusercontent.com/MichaelAllen1966/' + \\\n            '1804_python_healthcare/master/titanic/data/train.csv'\n\ndata = pd.read_csv(address)\n\ndata.head(2)\n\n\n\n\n\n\n\n\n\nPassengerId\nSurvived\nPclass\nName\nSex\nAge\nSibSp\nParch\nTicket\nFare\nCabin\nEmbarked\n\n\n\n\n0\n1\n0\n3\nBraund, Mr. Owen Harris\nmale\n22.0\n1\n0\nA/5 21171\n7.2500\nNaN\nS\n\n\n1\n2\n1\n1\nCumings, Mrs. John Bradley (Florence Briggs Th...\nfemale\n38.0\n1\n0\nPC 17599\n71.2833\nC85\nC",
+    "crumbs": [
+      "An Introduction to Reproducible Document Creation with Quarto",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Code Chunks</span>"
+    ]
+  },
+  {
+    "objectID": "code_chunks.html#your-first-code-block",
+    "href": "code_chunks.html#your-first-code-block",
+    "title": "14  Code Chunks",
+    "section": "",
+    "text": "```{language}\nyour_code\n```\n\n```{python}\nimport pandas as pd\n\naddress = 'https://raw.githubusercontent.com/MichaelAllen1966/' + \\\n            '1804_python_healthcare/master/titanic/data/train.csv'\n\ndata = pd.read_csv(address)\n\ndata.head(2)\n```",
+    "crumbs": [
+      "An Introduction to Reproducible Document Creation with Quarto",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Code Chunks</span>"
+    ]
+  },
+  {
+    "objectID": "code_chunks.html#ducks-quacks-dont-echo",
+    "href": "code_chunks.html#ducks-quacks-dont-echo",
+    "title": "14  Code Chunks",
+    "section": "14.2 (Duck’s Quack’s Don’t) Echo",
+    "text": "14.2 (Duck’s Quack’s Don’t) Echo\nYou may have noticed that both the code and the output appeared after running the code block above.\nThis is because, by default, the ‘echo’ parameter is set to true, which means that the code used to create an output will be included.\nWe can override this parameter by making the first line of our code block be\n#| echo: false\n```{python}\n#| echo: false\nimport pandas as pd\n\naddress = 'https://raw.githubusercontent.com/MichaelAllen1966/' + \\\n            '1804_python_healthcare/master/titanic/data/train.csv'\n\ndata = pd.read_csv(address)\n\ndata.head(2)\n```\nNow you can see that we just get the output:\n\n\n\n\n\n\n\n\n\n\nPassengerId\nSurvived\nPclass\nName\nSex\nAge\nSibSp\nParch\nTicket\nFare\nCabin\nEmbarked\n\n\n\n\n0\n1\n0\n3\nBraund, Mr. Owen Harris\nmale\n22.0\n1\n0\nA/5 21171\n7.2500\nNaN\nS\n\n\n1\n2\n1\n1\nCumings, Mrs. John Bradley (Florence Briggs Th...\nfemale\n38.0\n1\n0\nPC 17599\n71.2833\nC85\nC\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nIn the next chapter, we’ll look at how to set these parameters on a per-document level - though you may find yourself wanting to overwrite the default you set for certain cells, so it’s useful to know both ways of doing it.\nFor multipage documents like books, you may even want to set these parameters at a project level.",
+    "crumbs": [
+      "An Introduction to Reproducible Document Creation with Quarto",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Code Chunks</span>"
+    ]
+  },
+  {
+    "objectID": "code_chunks.html#making-the-most-of-the-persistent-environment",
+    "href": "code_chunks.html#making-the-most-of-the-persistent-environment",
+    "title": "14  Code Chunks",
+    "section": "14.3 Making the most of the persistent environment",
+    "text": "14.3 Making the most of the persistent environment\nAs we move through the document, any variables we have created will persist.\nTherefore, in the later steps, we can refer to the same variables and reuse the same libraries without having to recreate them.\n\n```{python}\ndata.value_counts('Pclass')\n```\n\nPclass\n3    491\n1    216\n2    184\nName: count, dtype: int64",
+    "crumbs": [
+      "An Introduction to Reproducible Document Creation with Quarto",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Code Chunks</span>"
+    ]
+  },
+  {
+    "objectID": "code_chunks.html#charts",
+    "href": "code_chunks.html#charts",
+    "title": "14  Code Chunks",
+    "section": "14.4 Charts",
+    "text": "14.4 Charts\nMost outputs can be displayed in Quarto documents - static and interactive charts and static and interactive maps are supported by default.\n\n```{python}\nimport plotly.express as px\n\npx.bar(data.value_counts('Sex'),\n       title=\"Number of Passengers by Recorded Sex\")\n```\n\n                                                \n\n\n\n```{python}\nimport matplotlib.pyplot as plt\n\nfig, ax = plt.subplots(figsize=(10,5))\npclass_counts = pd.DataFrame(data.value_counts('Pclass')).reset_index()\nplt.bar(x=pclass_counts['Pclass'], height=pclass_counts['count'])\nfig.show()\n```\n\nC:\\Users\\Sammi\\AppData\\Local\\Temp\\ipykernel_27084\\3960798882.py:6: UserWarning:\n\nFigureCanvasAgg is non-interactive, and thus cannot be shown",
+    "crumbs": [
+      "An Introduction to Reproducible Document Creation with Quarto",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Code Chunks</span>"
+    ]
+  },
+  {
+    "objectID": "code_chunks.html#maps",
+    "href": "code_chunks.html#maps",
+    "title": "14  Code Chunks",
+    "section": "14.5 Maps",
+    "text": "14.5 Maps\n\n14.5.1 Static Maps\n\n\n\n\n\n\nTip\n\n\n\nFor more details about this code, head to the HSMA Geographic Modelling and Visualisation Book - Static Maps\n\n\nAs static maps created using the geopandas plot method are just matplotlib plots, we don’t need to do anything special with them.\n\n```{python}\nimport geopandas\n\nlsoa_2011_crime_figures_df = geopandas.read_file(\"https://github.com/hsma-programme/h6_3b_advanced_qgis_mapping_python/raw/main/h6_3b_advanced_qgis_and_mapping_in_python/example_code/lsoa_2011_sw5forces_crime_figures.gpkg\")\n\nlsoa_2011_crime_figures_df.plot(column=\"sw_5forces_street_by_lsoa_Other crime\")\n```\n\n\n\n\n\n\n\n\n\n\n14.5.2 Interactive Maps\n\n\n\n\n\n\nTip\n\n\n\nFor more details about this code, head to the HSMA Geographic Modelling and Visualisation Book - Interactive Maps\n\n\n\n```{python}\nimport folium\n\ngp_list = pd.read_csv(\"https://github.com/hsma-programme/h6_3b_advanced_qgis_mapping_python/raw/main/h6_3b_advanced_qgis_and_mapping_in_python/example_code/gp_surgery_locations_plus_patient_list_size.csv\")\n\ngp_list_gdf = geopandas.GeoDataFrame(\n    gp_list, # Our pandas dataframe\n    geometry = geopandas.points_from_xy(\n        gp_list['result_eastings'], # Our 'x' column (horizontal position of points)\n        gp_list['result_northings'] # Our 'y' column (vertical position of points)\n        ),\n    crs = 'EPSG:27700'\n    )\n\n# Convert to 4326 (lat/long) for working with Folium\ngp_list_gdf = gp_list_gdf.to_crs('EPSG:4326')\n\n# Filter out instances with no 'list' (e.g. things like specialist clinics)\ngp_list = gp_list[~gp_list['Total List Size'].isna()]\n\n# reduce to the southwest to not overload Folium\nxmin, xmax = -6.449974,-2.717735\nymin, ymax =  49.814737,51.246969\ngp_list_gdf_sw = gp_list_gdf.cx[xmin:xmax, ymin:ymax]\n\n# Filter out instances with no geometry\ngp_list_gdf_sw = gp_list_gdf_sw[~gp_list_gdf_sw['geometry'].is_empty]\n\n# Create a geometry list from the GeoDataFrame\ngeo_df_list = [[point.xy[1][0], point.xy[0][0]] for point in gp_list_gdf_sw.geometry]\n\ngp_map_tooltip = folium.Map(\n    location=[50.7, -4.2],\n    zoom_start=8,\n    tiles='openstreetmap',\n    )\n\nfor i, coordinates in enumerate(geo_df_list):\n\n    gp_map_tooltip = gp_map_tooltip.add_child(\n        folium.Marker(\n            location=coordinates,\n            tooltip=gp_list_gdf_sw['name'].values[i],\n            icon=folium.Icon(icon=\"user-md\", prefix='fa', color=\"black\")\n            )\n     )\n\ngp_map_tooltip\n```\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook",
+    "crumbs": [
+      "An Introduction to Reproducible Document Creation with Quarto",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Code Chunks</span>"
+    ]
+  },
+  {
+    "objectID": "code_chunks.html#additional-code-chunk-options",
+    "href": "code_chunks.html#additional-code-chunk-options",
+    "title": "14  Code Chunks",
+    "section": "14.6 Additional Code Chunk Options",
+    "text": "14.6 Additional Code Chunk Options\nLike #| echo: false, there are a range of different code chunk options that can be set.\nEach value needs to be set as #| parameter: value on its own line at the start of the code block.\nThe key ones are\n\neval\n\nthis determines whether the cell will actually run or not\ntrue or false\n\necho\n\nthis determines whether the code is included\ntrue or false\n\ncode-fold\n\nthis allows you to include the code as a collapsible element\ntrue (put it in a collapsible element and collapse it), false (don’t collapse - default), show (put it in a collapsible element but leave it expanded by default)\n\nlabel\n\nthis gives the code cell an internal label that will appear in the terminal printout when the code is being rendered, which can make it a lot easier to work out which code cell is the culprit if you receive errors\na-continuous-string-describing-the-cell\n\nwarning\n\nthis determines whether warning messages outputted by any of the actions in the cell will be included in the output\ntrue/false\n\noutput\n\nthis determines whether the output of the code is actually shown. Can be useful for preprocessing steps you want to execute\ntrue/false/asis\n\nasis is a special parameter we’ll cover more later - it can be helpful for producing, for example, automated tabsets in a loop\n\n\nfig-cap\n\na caption to display below an outputted figure\n“A string, surrounded by quotation marks”\n\n\nYou can find a full list of the different options in the Quarto documentation\nHere’s an example with multiple options set\n```{python}\n#| code-fold: true\n#| label: multiple-code-chunk-options-example\n#| fig-cap: \"A bar plot\"\n#| warning: false\nfig, ax = plt.subplots()\npclass_counts = pd.DataFrame(data.value_counts('Pclass')).reset_index()\nplt.bar(x=pclass_counts['Pclass'], height=pclass_counts['count'])\nfig.show()\n```\n\n\nCode\nfig, ax = plt.subplots()\npclass_counts = pd.DataFrame(data.value_counts('Pclass')).reset_index()\nplt.bar(x=pclass_counts['Pclass'], height=pclass_counts['count'])\nfig.show()\n\n\n\n\n\n\n\n\nFigure 14.1: A bar plot",
+    "crumbs": [
+      "An Introduction to Reproducible Document Creation with Quarto",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Code Chunks</span>"
+    ]
+  },
+  {
     "objectID": "automating_spreadsheets_xlsx_writer.html",
     "href": "automating_spreadsheets_xlsx_writer.html",
     "title": "26  (Coming Soon) Automating Spreadsheet Creation with the XlsxWriter Package",

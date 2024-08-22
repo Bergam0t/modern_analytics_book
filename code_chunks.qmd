@@ -1,4 +1,4 @@
-# (Coming Soon) Code Chunks
+# Code Chunks
 
 While being able to write documents with all of these built-in features from the previous chapter is all well and good, one of the biggest draws of Quarto is being able to put all of your code to process and visualise your data inside the document, removing the need for any copying-and-pasting.
 
@@ -24,7 +24,7 @@ address = 'https://raw.githubusercontent.com/MichaelAllen1966/' + \
 
 data = pd.read_csv(address)
 
-data.head()
+data.head(2)
 ```
 
 And the output would be this.
@@ -38,5 +38,218 @@ address = 'https://raw.githubusercontent.com/MichaelAllen1966/' + \
 
 data = pd.read_csv(address)
 
-data.head()
+data.head(2)
+```
+
+## (Duck's Quack's Don't) Echo
+
+You may have noticed that both the code and the output appeared after running the code block above.
+
+This is because, by default, the 'echo' parameter is set to true, which means that the code used to create an output will be included.
+
+We can override this parameter by making the first line of our code block be
+
+`#| echo: false`
+
+```{{python}}
+#| echo: false
+import pandas as pd
+
+address = 'https://raw.githubusercontent.com/MichaelAllen1966/' + \
+            '1804_python_healthcare/master/titanic/data/train.csv'
+
+data = pd.read_csv(address)
+
+data.head(2)
+```
+Now you can see that we just get the output:
+
+```{python}
+#| echo: false
+import pandas as pd
+
+address = 'https://raw.githubusercontent.com/MichaelAllen1966/' + \
+            '1804_python_healthcare/master/titanic/data/train.csv'
+
+data = pd.read_csv(address)
+
+data.head(2)
+```
+
+:::{.callout-tip}
+In the next chapter, we'll look at how to set these parameters on a per-document level - though you may find yourself wanting to overwrite the default you set for certain cells, so it's useful to know both ways of doing it.
+
+For multipage documents like books, you may even want to set these parameters at a project level.
+:::
+
+## Making the most of the persistent environment
+
+As we move through the document, any variables we have created will persist.
+
+Therefore, in the later steps, we can refer to the same variables and reuse the same libraries without having to recreate them.
+
+```{python}
+#| echo: fenced
+data.value_counts('Pclass')
+```
+
+## Charts
+
+Most outputs can be displayed in Quarto documents - static and interactive charts and static and interactive maps are supported by default.
+
+
+```{python}
+#| echo: fenced
+import plotly.express as px
+
+px.bar(data.value_counts('Sex'),
+       title="Number of Passengers by Recorded Sex")
+```
+
+
+```{python}
+#| echo: fenced
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(figsize=(10,5))
+pclass_counts = pd.DataFrame(data.value_counts('Pclass')).reset_index()
+plt.bar(x=pclass_counts['Pclass'], height=pclass_counts['count'])
+fig.show()
+```
+
+## Maps
+
+### Static Maps
+
+:::{.callout-tip}
+For more details about this code, head to the [HSMA Geographic Modelling and Visualisation Book - Static Maps](https://hsma-programme.github.io/hsma6_geographic_optimisation_and_visualisation_book/python_geopandas_matplotlib.html)
+:::
+
+As static maps created using the geopandas plot method are just matplotlib plots, we don't need to do anything special with them.
+
+```{python}
+#| echo: fenced
+import geopandas
+
+lsoa_2011_crime_figures_df = geopandas.read_file("https://github.com/hsma-programme/h6_3b_advanced_qgis_mapping_python/raw/main/h6_3b_advanced_qgis_and_mapping_in_python/example_code/lsoa_2011_sw5forces_crime_figures.gpkg")
+
+lsoa_2011_crime_figures_df.plot(column="sw_5forces_street_by_lsoa_Other crime")
+```
+
+### Interactive Maps
+
+:::{.callout-tip}
+For more details about this code, head to the [HSMA Geographic Modelling and Visualisation Book - Interactive Maps](https://hsma-programme.github.io/hsma6_geographic_optimisation_and_visualisation_book/python_geopandas_folium_point_data.html)
+:::
+
+
+
+```{python}
+#| echo: fenced
+import folium
+
+gp_list = pd.read_csv("https://github.com/hsma-programme/h6_3b_advanced_qgis_mapping_python/raw/main/h6_3b_advanced_qgis_and_mapping_in_python/example_code/gp_surgery_locations_plus_patient_list_size.csv")
+
+gp_list_gdf = geopandas.GeoDataFrame(
+    gp_list, # Our pandas dataframe
+    geometry = geopandas.points_from_xy(
+        gp_list['result_eastings'], # Our 'x' column (horizontal position of points)
+        gp_list['result_northings'] # Our 'y' column (vertical position of points)
+        ),
+    crs = 'EPSG:27700'
+    )
+
+# Convert to 4326 (lat/long) for working with Folium
+gp_list_gdf = gp_list_gdf.to_crs('EPSG:4326')
+
+# Filter out instances with no 'list' (e.g. things like specialist clinics)
+gp_list = gp_list[~gp_list['Total List Size'].isna()]
+
+# reduce to the southwest to not overload Folium
+xmin, xmax = -6.449974,-2.717735
+ymin, ymax =  49.814737,51.246969
+gp_list_gdf_sw = gp_list_gdf.cx[xmin:xmax, ymin:ymax]
+
+# Filter out instances with no geometry
+gp_list_gdf_sw = gp_list_gdf_sw[~gp_list_gdf_sw['geometry'].is_empty]
+
+# Create a geometry list from the GeoDataFrame
+geo_df_list = [[point.xy[1][0], point.xy[0][0]] for point in gp_list_gdf_sw.geometry]
+
+gp_map_tooltip = folium.Map(
+    location=[50.7, -4.2],
+    zoom_start=8,
+    tiles='openstreetmap',
+    )
+
+for i, coordinates in enumerate(geo_df_list):
+
+    gp_map_tooltip = gp_map_tooltip.add_child(
+        folium.Marker(
+            location=coordinates,
+            tooltip=gp_list_gdf_sw['name'].values[i],
+            icon=folium.Icon(icon="user-md", prefix='fa', color="black")
+            )
+     )
+
+gp_map_tooltip
+```
+
+## Additional Code Chunk Options
+
+Like `#| echo: false`, there are a range of different code chunk options that can be set.
+
+Each value needs to be set as
+`#| parameter: value`
+on its own line at the start of the code block.
+
+The key ones are
+
+- eval
+    - this determines whether the cell will actually run or not
+    - `true` or `false`
+- echo
+    - this determines whether the code is included
+    - `true` or `false`
+- code-fold
+    - this allows you to include the code as a collapsible element
+    - `true` (put it in a collapsible element and collapse it), `false` (don't collapse - default), `show` (put it in a collapsible element but leave it expanded by default)
+- label
+    - this gives the code cell an internal label that will appear in the terminal printout when the code is being rendered, which can make it a lot easier to work out which code cell is the culprit if you receive errors
+    - `a-continuous-string-describing-the-cell`
+- warning
+    - this determines whether warning messages outputted by any of the actions in the cell will be included in the output
+    - true/false
+- output
+    - this determines whether the output of the code is actually shown. Can be useful for preprocessing steps you want to execute
+    - true/false/asis
+        - asis is a special parameter we'll cover more later - it can be helpful for producing, for example, automated tabsets in a loop
+- fig-cap
+    - a caption to display below an outputted figure
+    - "A string, surrounded by quotation marks"
+
+You can find a full list of the different options in the [Quarto documentation](https://quarto.org/docs/reference/cells/cells-knitr.html)
+
+Here's an example with multiple options set
+
+```{{python}}
+#| code-fold: true
+#| label: multiple-code-chunk-options-example
+#| fig-cap: "A bar plot"
+#| warning: false
+fig, ax = plt.subplots()
+pclass_counts = pd.DataFrame(data.value_counts('Pclass')).reset_index()
+plt.bar(x=pclass_counts['Pclass'], height=pclass_counts['count'])
+fig.show()
+```
+
+```{python}
+#| code-fold: true
+#| label: fig-multiple-code-chunk-options-example
+#| fig-cap: "A bar plot"
+#| warning: false
+fig, ax = plt.subplots()
+pclass_counts = pd.DataFrame(data.value_counts('Pclass')).reset_index()
+plt.bar(x=pclass_counts['Pclass'], height=pclass_counts['count'])
+fig.show()
 ```

@@ -1,0 +1,8 @@
+
+![](assets/2024-08-22-17-55-37.png)
+
+![](assets/2024-08-22-17-55-17.png)
+
+![](assets/2024-08-22-17-56-09.png)
+
+`There is an unactivated Python environment in .venv. Did you forget to activate it?`
