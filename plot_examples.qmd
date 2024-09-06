@@ -1,0 +1,484 @@
+# Example Outputs
+
+In this page, we're going to make a series of tables and plots out of the olympic dataset.
+
+## Dataframes
+
+::: {.panel-tabset}
+
+### Medals per Country by Year
+
+```{python}
+import pandas as pd
+
+medals_per_country_per_year = pd.read_csv("medals_per_country_per_year.csv")
+
+medals_per_country_per_year.sort_values("Total", ascending=False).head(15)
+```
+
+
+### Medals per Country by Year - Sorted by Multiple Columns
+
+```{python}
+import pandas as pd
+
+medals_per_country_per_year = pd.read_csv("medals_per_country_per_year.csv")
+
+medals_per_country_per_year.sort_values(["Gold", "Total"], ascending=True).head(15)
+```
+
+### Total Medals per Country - All Time - Sorted by Single Column
+
+```{python}
+import pandas as pd
+
+medals_per_country_per_year = pd.read_csv("medals_per_country_per_year.csv")
+
+total_medals_all_time = (
+    medals_per_country_per_year.drop(columns=["Year", "NOC"])
+    .groupby('Country').sum()
+    .reset_index()
+    .sort_values('Total', ascending=False)
+    )
+
+total_medals_all_time.head(15)
+```
+
+### Medal Winners per event per year
+
+```{python}
+import pandas as pd
+
+medals_by_event = pd.read_csv("country_medals_by_event.csv")
+medals_by_event
+
+```
+
+### Medal Winners per event per year - single sport and year
+
+```{python}
+import pandas as pd
+
+selected_year = 2012
+selected_sport = "Judo"
+
+medals_by_event = pd.read_csv("country_medals_by_event.csv")
+medals_by_event
+
+```
+
+### Athletes in most events per year
+
+```{python}
+import pandas as pd
+
+athlete_statistics = pd.read_csv("athlete_details_eventwise.csv")
+
+most_events_per_year_by_athlete = athlete_statistics.value_counts(['Name', 'Country', 'Year']).reset_index()
+
+most_events_per_year_by_athlete.head(15)
+```
+
+### Athletes in most events per year - Details on Athlete with Most Events
+
+```{python}
+import pandas as pd
+
+athlete_statistics = pd.read_csv("athlete_details_eventwise.csv")
+
+most_events_per_year_by_athlete = athlete_statistics.value_counts(['Name', 'Country', 'Year']).reset_index()
+
+athlete_name_most_events = most_events_per_year_by_athlete.head(1)['Name'].values[0]
+athlete_name_most_events_year = most_events_per_year_by_athlete.head(1)['Year'].values[0]
+
+athlete_statistics[(athlete_statistics["Name"] == athlete_name_most_events) &
+                    (athlete_statistics["Year"] == athlete_name_most_events_year)].head(15)
+```
+
+### Athlete with most total events competed in
+
+```{python}
+import pandas as pd
+
+athlete_statistics = pd.read_csv("athlete_details_eventwise.csv")
+
+athlete_statistics.value_counts(['Name', 'Sex', 'Country']).reset_index()
+```
+
+### Filtering to a single athlete - Exact Match
+
+```{python}
+import pandas as pd
+
+athlete_statistics = pd.read_csv("athlete_details_eventwise.csv")
+
+chosen_athlete = "Simone Arianne Biles"
+
+athlete_statistics[athlete_statistics["Name"] == chosen_athlete]
+```
+
+### Filtering to a single athlete - Partial Match
+
+```{python}
+import pandas as pd
+
+athlete_statistics = pd.read_csv("athlete_details_eventwise.csv")
+
+search_string = "Ben"
+
+athlete_statistics[athlete_statistics["Name"].str.contains(search_string)]
+```
+
+### List of Events in Year
+
+```{python}
+import pandas as pd
+
+selected_year = 2012
+
+athlete_statistics = pd.read_csv("athlete_details_eventwise.csv")
+
+athlete_statistics[athlete_statistics["Year"] == selected_year][['Sport', 'Event']].drop_duplicates().reset_index(drop=True).head(15)
+```
+
+### Count of Events in Year
+
+```{python}
+import pandas as pd
+
+athlete_statistics = pd.read_csv("athlete_details_eventwise.csv")
+
+athlete_statistics[athlete_statistics["Year"] == selected_year][['Sport', 'Event']].drop_duplicates().value_counts('Sport').reset_index().head(15)
+```
+
+:::
+
+## Useful Lists and Info From Datasets
+::: {.panel-tabset}
+
+### List of Sports
+
+```{python}
+import pandas as pd
+
+athlete_statistics = pd.read_csv("athlete_details_eventwise.csv")
+
+all_sports = athlete_statistics["Sport"].drop_duplicates().tolist()
+
+print(all_sports)
+```
+
+### List of Events in a particular year
+
+```{python}
+import pandas as pd
+
+selected_year = 2012
+
+athlete_statistics = pd.read_csv("athlete_details_eventwise.csv")
+
+athlete_statistics_year = athlete_statistics[athlete_statistics["Year"] == selected_year]
+
+all_events = athlete_statistics_year["Event"].drop_duplicates().tolist()
+
+print(all_events)
+```
+
+### Earliest and Latest Years in Datasets
+
+```{python}
+import pandas as pd
+
+medals_per_country_per_year = pd.read_csv("medals_per_country_per_year.csv")
+
+earliest_year = medals_per_country_per_year["Year"].min()
+
+latest_year = medals_per_country_per_year["Year"].max()
+
+print(f"The earliest year in the dataset is {earliest_year}")
+
+print(f"The latest year in the dataset is {latest_year}")
+```
+
+### Oldest and Youngest Athletes in given year in given event
+
+```{python}
+import pandas as pd
+
+selected_year = 2012
+selected_sport = "Gymnastics"
+
+athlete_statistics = pd.read_csv("athlete_details_eventwise.csv")
+
+athlete_statistics_filtered = athlete_statistics[(athlete_statistics["Year"] == selected_year) & (athlete_statistics["Sport"] == selected_sport)]
+
+youngest_athlete = athlete_statistics_filtered["Age"].min()
+
+oldest_athlete = athlete_statistics_filtered["Age"].max()
+
+print(f"The youngest athlete who competed in {selected_sport} in {selected_year} was {youngest_athlete:.0f} years old.")
+
+print(f"The oldest athlete who competed in {selected_sport} in {selected_year} was{oldest_athlete:.0f} years old.")
+```
+
+:::
+
+## Plots
+
+::: {.panel-tabset}
+
+### Single Medal Type - per Country by Year
+
+```{python}
+import pandas as pd
+import plotly.express as px
+
+selected_countries = ["UK", "USA", "Canada", "Australia", "China", "Russia", "France", "Germany", "Italy"]
+
+selected_medal_type = "Bronze"
+
+medals_per_country_per_year = pd.read_csv("medals_per_country_per_year.csv")
+
+px.line(medals_per_country_per_year[medals_per_country_per_year["Country"].isin(selected_countries)],
+        x="Year", y=selected_medal_type, color="Country",
+        title=f"{selected_medal_type} medals over time - subset of countries")
+```
+
+### Single Medal Type - per Country by Year - Single Country
+
+```{python}
+import pandas as pd
+import plotly.express as px
+
+chosen_country = "UK"
+selected_medal_type = "Bronze"
+
+medals_per_country_per_year = pd.read_csv("medals_per_country_per_year.csv")
+
+px.line(medals_per_country_per_year[medals_per_country_per_year["Country"] == chosen_country],
+        y=selected_medal_type, x="Year",
+        title=f"{selected_medal_type} medals for {chosen_country} over time")
+```
+
+### All Medal Types - Single Country
+
+```{python}
+import pandas as pd
+import plotly.express as px
+
+chosen_country = "UK"
+
+medals_per_country_per_year = pd.read_csv("medals_per_country_per_year.csv")
+
+medals_per_country_per_year_long = medals_per_country_per_year.melt(id_vars=["Year", "Country", "NOC"])
+
+px.line(medals_per_country_per_year_long[medals_per_country_per_year_long["Country"] == chosen_country],
+        y="value", x="Year", color="variable",
+        color_discrete_sequence=["orange", "silver", "gold", "blue"],
+        title=f"Medals Won over Time - {chosen_country}")
+```
+
+### Total Medals per Country - Bar Chart of Summed Values - Limiting Number of Countries
+
+```{python}
+import pandas as pd
+import plotly.express as px
+
+rows_to_display = 10
+
+medals_per_country_per_year = pd.read_csv("medals_per_country_per_year.csv")
+
+total_medals_all_time = (
+    medals_per_country_per_year.drop(columns=["Year", "NOC"])
+    .groupby('Country').sum()
+    .reset_index()
+    .sort_values('Total', ascending=False)
+    )
+
+px.bar(total_medals_all_time.head(rows_to_display), x='Country', y='Total',
+       title=f"Total Number of Medals since 1896 - Top {rows_to_display} Countries")
+```
+
+
+### Total Medals per Country - Stacked Bar Chart
+
+```{python}
+import pandas as pd
+import plotly.express as px
+
+medals_per_country_per_year = pd.read_csv("medals_per_country_per_year.csv")
+
+total_medals_all_time = (
+    medals_per_country_per_year.drop(columns=["Year", "NOC"])
+    .groupby('Country').sum()
+    .reset_index()
+    .sort_values('Total', ascending=False)
+    )
+
+total_medals_all_time_long = total_medals_all_time.drop(columns='Total').melt(id_vars="Country")
+
+px.bar(total_medals_all_time_long,
+        x="Country", y="value", color="variable",
+        color_discrete_sequence=["orange", "silver", "gold"]
+        )
+```
+
+### Total Medals per Country - Stacked Bar Chart as Percentage of Total
+
+```{python}
+import pandas as pd
+import plotly.express as px
+
+medals_per_country_per_year = pd.read_csv("medals_per_country_per_year.csv")
+
+total_medals_all_time = (
+    medals_per_country_per_year.drop(columns=["Year", "NOC"])
+    .groupby('Country').sum()
+    .reset_index()
+    .sort_values('Total', ascending=False)
+    )
+
+total_medals_all_time_long = total_medals_all_time.drop(columns='Total').melt(id_vars="Country")
+
+total_medals_all_time_long['Total'] = total_medals_all_time_long['value'].groupby(total_medals_all_time_long['Country']).transform('sum')
+
+total_medals_all_time_long['Percentage of Total'] = total_medals_all_time_long['value'] / total_medals_all_time_long['Total']
+
+px.bar(total_medals_all_time_long[total_medals_all_time_long['Country'].isin(total_medals_all_time_long.head(rows_to_display)['Country'].values)],
+       x="Country", y="Percentage of Total", color="variable",
+       color_discrete_sequence=["orange", "silver", "gold"],
+       title=f"Breakdown of Medals by type - Top {rows_to_display} countries by total all-time medal count")
+
+```
+
+### Athlete Gender Balance by Year - Stacked Bar Chart (Parts of a Whole)
+
+```{python}
+import pandas as pd
+import plotly.express as px
+
+athlete_statistics = pd.read_csv("athlete_details_eventwise.csv")
+
+distinct_athletes_per_year = athlete_statistics[['Name', 'Year','Country','Sex', 'Age', 'Height', 'Weight']].drop_duplicates()
+
+athlete_counts_by_sex_by_year = distinct_athletes_per_year.value_counts(['Sex', 'Year']).reset_index()
+
+athlete_counts_by_sex_by_year['total_athletes_both_sex_in_year'] = athlete_counts_by_sex_by_year['count'].groupby(athlete_counts_by_sex_by_year['Year']).transform('sum')
+
+athlete_counts_by_sex_by_year['Percentage of Athletes'] = athlete_counts_by_sex_by_year['count'] / athlete_counts_by_sex_by_year['total_athletes_both_sex_in_year']
+
+px.bar(athlete_counts_by_sex_by_year,
+       x="Year", y="Percentage of Athletes", color="Sex",
+       title=f"Change in Gender Split Over Time")
+
+```
+
+### Events per Sport Per Year
+
+```{python}
+import pandas as pd
+import plotly.express as px
+
+athlete_statistics = pd.read_csv("athlete_details_eventwise.csv")
+
+selected_sport = "Gymnastics"
+
+athlete_statistics_sport = athlete_statistics[athlete_statistics["Sport"] == selected_sport]
+
+events_per_year_by_sport = (
+    athlete_statistics_sport[['Year', 'Event']]
+    .drop_duplicates()
+    .value_counts(['Year'])
+    .reset_index()
+)
+
+px.line(events_per_year_by_sport.sort_values("Year"), x="Year", y="count",
+            markers=True, title=f"{selected_sport} Events Per Olympics",
+            range_x=[athlete_statistics.Year.min(), athlete_statistics.Year.max()])
+
+```
+
+:::
+
+
+## Maps
+
+::: {.panel-tabset}
+
+### Number of Medals by Location - Static Map
+
+```{python}
+import pandas as pd
+import geopandas
+import matplotlib.pyplot as plt
+
+selected_year = 2012
+selected_medal_type="Bronze"
+
+medals_per_country_per_year = pd.read_csv("medals_per_country_per_year.csv")
+
+country_outlines = geopandas.read_file("countries_outlines.geojson")
+
+medals_per_country_per_year_gdf = pd.concat([
+    pd.merge(country_outlines, medals_per_country_per_year, left_on="id", right_on="NOC", how="inner"),
+    pd.merge(country_outlines, medals_per_country_per_year, left_on="name", right_on="Country", how="inner")
+]).drop_duplicates()
+
+fig, ax = plt.subplots(figsize=(15, 8))
+ax = medals_per_country_per_year_gdf[medals_per_country_per_year_gdf["Year"] == selected_year].plot(
+    "Gold", legend=True, ax=ax
+    )
+ax.axis('off')
+plt.title(f"Number of {selected_medal_type} Medals in {selected_year}")
+
+```
+
+### Number of Medals by Location - Interactive Map
+
+```{python}
+import pandas as pd
+import geopandas
+import folium
+
+selected_year = 2012
+selected_medal_type="Bronze"
+
+medals_per_country_per_year = pd.read_csv("medals_per_country_per_year.csv")
+
+country_outlines = geopandas.read_file("countries_outlines.geojson")
+
+medals_per_country_per_year_gdf = pd.concat([
+    pd.merge(country_outlines, medals_per_country_per_year, left_on="id", right_on="NOC", how="inner"),
+    pd.merge(country_outlines, medals_per_country_per_year, left_on="name", right_on="Country", how="inner")
+]).drop_duplicates()
+
+#create base map
+world_map_medals = folium.Map(
+    location=[50.71671, -3.50668],
+    zoom_start=2,
+    tiles='cartodbpositron'
+    )
+
+# create and add choropleth map
+choropleth = folium.Choropleth(
+    geo_data=medals_per_country_per_year_gdf[medals_per_country_per_year_gdf["Year"] == selected_year], # dataframe with geometry in it
+    data=medals_per_country_per_year_gdf[medals_per_country_per_year_gdf["Year"] == selected_year], # dataframe with data in - may be the same dataframe or a different one
+    columns=['name', 'Gold'], # [key (field for geometry), field to plot]
+    key_on='feature.properties.Country'
+    )
+
+choropleth = choropleth.add_to(world_map_medals)
+
+choropleth = choropleth.geojson.add_child(
+    folium.features.GeoJsonTooltip(
+        ['name', 'Gold'],
+        labels=True
+        )
+)
+
+world_map_medals
+
+```
+
+
+:::

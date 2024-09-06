@@ -1,0 +1,30 @@
+---
+title: "(Coming Soon) Quarto Versus RMarkdown Vs Jupyter Notebooks (and other alternatives)"
+format: html
+---
+
+While Quarto is being actively developed and is a newer package to
+
+Particularly if coming from R Markdown, you may feel that you have come
+
+
+
+## RMarkdown vs Quarto
+
+### Differences in Approach for Parameterised Reports
+
+
+
+
+
+
+
+
+
+
+
+
+
+## References
+
+[With thanks to the NHS-R Community for their insightful insights into the real-world benefits and limitations of Quarto - though note this link will cease to work in the future](https://nhsrcommunity.slack.com/archives/CT8SQS97Z/p1722530726357649)

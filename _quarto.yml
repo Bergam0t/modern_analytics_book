@@ -18,6 +18,11 @@ book:
       - system_dynamics_agent_based_simulation.qmd
       - git_and_github.qmd
       - web_development.qmd
+    - part: Data Manipulation and Visualisation
+      chapters:
+      - recap_of_pandas.qmd
+      - recap_plotly_express.qmd
+      - plot_examples.qmd
     - part: An Introduction to Reproducible Document Creation with Quarto
       chapters:
       - what_is_quarto.qmd
